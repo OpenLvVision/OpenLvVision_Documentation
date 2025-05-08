@@ -1,0 +1,18 @@
+baseURL = 'https://github.com/OpenLvVision/'
+languageCode = 'en-us'
+title = 'OpenLvVision'
+
+[module]
+    [[module.imports]]
+        path = "github.com/colinwilson/lotusdocs"
+        disable = false
+    [[module.imports]]
+        path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false
+
+[params.docs]
+	darkMode = true
+	title = 'OpenLvVision'
+	themeColor = 'cardinal'
+	sidebarIcons = false
+	titleIcon = false
