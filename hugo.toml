@@ -1,6 +1,6 @@
-baseURL = 'https://github.com/OpenLvVision/'
+baseURL = "https://openlvvision.github.io/OpenLvVision_Documentation"
 languageCode = 'en-us'
-title = 'OpenLvVision'
+title = "OpenLvVision"
 
 [module]
     [[module.imports]]
@@ -12,7 +12,12 @@ title = 'OpenLvVision'
 
 [params.docs]
 	darkMode = true
-	title = 'OpenLvVision'
-	themeColor = 'cardinal'
-	sidebarIcons = false
+	title = "OpenLvVision"
+	sidebarIcons = true
 	titleIcon = false
+
+[params.social]
+	github = "OpenLvVision"
+
+[params.footer]
+	copyright = "© Lukas Kamleitner. All rights reserved."

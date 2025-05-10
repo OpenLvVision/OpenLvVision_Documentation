@@ -1,0 +1,153 @@
+---
+weight: 1
+draft: false
+title: "Create"
+icon: "add_photo_alternate"
+toc: true
+description: "Creates a new image reference with the specified, unique name. This allocates memory to hold image data and returns a reference  for subsequent image processing operations."
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_Image.lvlib:Management.lvlib:Create.vi"></A><H2>OpenLvVision_Image.lvlib:Management.lvlib:Create.vi</H2>
+<P>Creates a new image reference with the specified, unique name. This allocates memory to hold image data and returns a reference  for subsequent image processing operations.</P>
+<P><IMG SRC="/OpenLvVision_Documentation/Createc.png" ALT="OpenLvVision_Image.lvlib:Management.lvlib:Create.vi"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>Image Name</B> <P>A unique identifier assigned to the created image reference</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cenum.png" ALT="cenum"></P>
+</TD>
+<TD>
+<B>Image Type</B> <P>Datatype of the pixel</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Border</B> <P>Image borders are essential for kernel-based image processing. This surrounding layer of pixels provides the necessary neighborhood context for kernels to operate correctly, especially at image edges, ensuring accurate convolution results across the entire image.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+</TD>
+<TD>
+<B>Image Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+</TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

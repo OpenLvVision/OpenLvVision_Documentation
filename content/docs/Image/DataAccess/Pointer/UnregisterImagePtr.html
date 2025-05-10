@@ -1,0 +1,211 @@
+---
+weight: 4
+draft: false
+title: "UnregisterImagePtr"
+icon: "location_searching"
+toc: true
+description: "Unergister the image s memory pointer."
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_Image.lvlib:DataAccess.lvlib:UnregisterImagePtr.vi"></A><H2>OpenLvVision_Image.lvlib:DataAccess.lvlib:UnregisterImagePtr.vi</H2>
+<P>Unergister the image's memory pointer.</P>
+<P><IMG SRC="/OpenLvVision_Documentation/UnregisterImagePtrc.png" ALT="OpenLvVision_Image.lvlib:DataAccess.lvlib:UnregisterImagePtr.vi"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>ImagePointer</B> <P>Pointer to the first pixel of an image</P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>BorderSize</B> <P>Border/padding around image data.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cu64.png" ALT="cu64"></P>
+</TD>
+<TD>
+<B>ImagePointer</B> <P>Address to the first pixel.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>LineWidth</B> <P>Represents the total number of bytes in a horizontal image line in memory.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Width</B> <P>X Resolution in pixel</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Height</B> <P>Y Resolution in pixel</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cenum.png" ALT="cenum"></P>
+</TD>
+<TD>
+<B>ImageFormat</B> <P>ImageFormat enum defines pixel data type: </P>
+<P>MonoU8 (8-bit unsigned ), </P>
+<P>MonoU16 (16-bit unsigned), </P>
+<P>MonoI16 (16-bit signed), </P>
+<P>MonoSGL (single-precision float), </P>
+<P>ColorU32 (8x4 unsigned integer, RGBA), </P>
+<P>ColorU64 (16x4 unsigned integer, RGBA).</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+</TD>
+<TD>
+<B>Image Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+</TD>
+<TD>
+<B>Image Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+</TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

@@ -1,0 +1,208 @@
+---
+weight: 3
+draft: false
+title: "Cast"
+icon: "compare"
+toc: true
+description: "Converts  the image s pixel data type. 
+For 8-bit and 16-bit images, the scaling method for this conversion is set by the specified  Method ."
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></A><H2>OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi</H2>
+<P>Converts  the image's pixel data type. </P>
+<P>For 8-bit and 16-bit images, the scaling method for this conversion is set by the specified &quot;Method&quot;.</P>
+<P><IMG SRC="/OpenLvVision_Documentation/Castc.png" ALT="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+</TD>
+<TD>
+<B>Image Src Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+</TD>
+<TD>
+<B>Image Dst Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cenum.png" ALT="cenum"></P>
+</TD>
+<TD>
+<B>Image Type</B> <P>ImageFormat enum defines pixel data type: </P>
+<P>MonoU8 (8-bit unsigned ), </P>
+<P>MonoU16 (16-bit unsigned), </P>
+<P>MonoI16 (16-bit signed), </P>
+<P>MonoSGL (single-precision float), </P>
+<P>ColorU32 (8x4 unsigned integer, RGBA), </P>
+<P>ColorU64 (16x4 unsigned integer, RGBA).</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/cu32.png" ALT="cu32"></P>
+</TD>
+<TD>
+<B>Method</B> <P>This is valid only for 16-bit to 8-bit conversions.</P>
+<P>Specifies the casting approach when changing pixel data types</P>
+<P></P>
+<P>- Use Bit Depth (0): Casts based on the image's bit depth information. </P>
+<P>- Shift (1): Casts by right-shifting the pixel values by a specified &quot;Number of Shifts&quot;.</P>
+<P>- Use Lookup Table (2): Casts using a provided &quot;Lookup Table&quot;. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Number of Shifts</B> <P>For 16-bit to 8-bit conversions.</P>
+<P>This specifies the number of bits to right-shift the pixel values during casting.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/c1dsgl.png" ALT="c1dsgl"></P>
+</TD>
+<TD>
+<B>Lookup Table</B> <P>Array where the index is the original value, and the values at that indexs are the new values.</P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>Numeric</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/OpenLvVision_Documentation/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+</TD>
+<TD>
+<B>Image Dst Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+</TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

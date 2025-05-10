@@ -1,0 +1,58 @@
+# Hero
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  title: "OpenLvVision"
+  subtitle: "OpenLvVision is an open-source library designed for image processing within the LabView environment."
+  
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
+  
+  image:
+    path: "images"
+    filename: "Logo.png" 
+    alt: "Logo"
+    boxShadow: false 
+    rounded: true 
+
+  ctaButton:
+    icon: rocket_launch
+    btnText: "Get Started"
+    url: "docs/"
+  cta2Button:
+    icon: rebase_edit
+    btnText: "Repository"
+    url: "https://github.com/OpenLvVision/"
+
+  info: "**Open Source** BSD-3-Clause license"
+  
+featureGrid:
+  enable: true
+  weight: 20
+  template: feature grid
+  items:
+   - title: "LabVIEW"
+     icon: code_blocks
+     description: " A graphical programming environment uniquely accelerating test system development through intuitive programming and fully integrated user interfaces."
+     ctaLink:
+        text: learn more
+        url: "https://www.ni.com/de/shop/labview.html"
+   
+   - title: Community Edition
+     icon: savings
+     description: "Utilize the free LabVIEW Community Edition." 
+     ctaLink:
+        text: learn more
+        url: "https://www.ni.com/de/shop/labview/select-edition/labview-community-edition.html"
+        
+   - title: Speed
+     icon: speed
+     description: "Speed is achieved through direct C++ interoperability and shared memory usage."
+ 
+imageCompare:
+  enable: false
