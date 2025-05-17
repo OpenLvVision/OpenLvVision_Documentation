@@ -10,9 +10,6 @@ title = "OpenLvVision"
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
 
-[params]
-     Description = "The personal website, blog and dev diary of clairecodes"
-
 [params.docs]
 	darkMode = true
 	title = "OpenLvVision"
