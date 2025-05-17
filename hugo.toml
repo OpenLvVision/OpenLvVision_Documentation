@@ -1,4 +1,4 @@
-baseURL = "https://openlvvision.github.io/OpenLvVision_Documentation"
+baseURL = "https://www.openlvvision.org/"
 languageCode = 'en-us'
 title = "OpenLvVision"
 
@@ -9,6 +9,9 @@ title = "OpenLvVision"
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
+
+[params]
+     Description = "The personal website, blog and dev diary of clairecodes"
 
 [params.docs]
 	darkMode = true
