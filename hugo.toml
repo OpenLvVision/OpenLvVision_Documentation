@@ -4,7 +4,7 @@ title = "OpenLvVision"
 
 [module]
     [[module.imports]]
-        path = "github.com/colinwilson/lotusdocs"
+        path = "lotusdocs"
         disable = false
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
@@ -14,10 +14,17 @@ title = "OpenLvVision"
 	darkMode = true
 	title = "OpenLvVision"
 	sidebarIcons = true
-	titleIcon = false
+	titleIcon = true
 
 [params.social]
 	github = "OpenLvVision"
 
 [params.footer]
 	copyright = "© Lukas Kamleitner. All rights reserved."
+
+[menu]
+[[menu.primary]]
+    name  = "Docs"
+    url = "docs/"
+    identifier = "docs"
+    weight = 1
