@@ -31,28 +31,32 @@ hero:
 
   info: "**Open Source** BSD-3-Clause license"
   
-featureGrid:
+imageText:
   enable: true
   weight: 20
-  template: feature grid
-  items:
-   - title: "LabVIEW"
-     icon: code_blocks
-     description: " A graphical programming environment uniquely accelerating test system development through intuitive programming and fully integrated user interfaces."
-     ctaLink:
-        text: learn more
-        url: "https://www.ni.com/de/shop/labview.html"
-   
-   - title: Community Edition
-     icon: savings
-     description: "Utilize the free LabVIEW Community Edition." 
-     ctaLink:
-        text: learn more
-        url: "https://www.ni.com/de/shop/labview/select-edition/labview-community-edition.html"
-        
-   - title: Speed
-     icon: speed
-     description: "Speed is achieved through direct C++ interoperability and shared memory usage."
- 
+  template: image text
+
+  title: Open-Source power for your LabVIEW vision applications
+  subtitle: Maximize your LabVIEW vision applications without the overhead of costly licenses. OpenLvVision offers an advanced, open-source image processing library meticulously engineered for native integration and high performance directly within your LabVIEW environment.
+
+  image:
+    path: "images/"
+    filename: "OpenLvVision_Overview.png"
+    alt: "Overview"
+
+  imgOrder:
+    desktop: 2
+    mobile: 1
+
+  list:
+    - text: Graphical Progamming
+      icon: code_blocks
+
+    - text: Use LabVIEW community
+      icon: savings
+
+    - text: Performace
+      icon: speed
+
 imageCompare:
   enable: false
