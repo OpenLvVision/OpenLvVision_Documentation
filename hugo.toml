@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://www.openlvvision.org/"
 languageCode = 'en-us'
 title = "OpenLvVision"
 
