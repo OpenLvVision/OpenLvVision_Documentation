@@ -21,8 +21,8 @@ hero:
     rounded: true 
 
   ctaButton:
-    icon: rocket_launch
-    btnText: "Get Started"
+    icon: book_ribbon
+    btnText: "Documentation"
     url: "docs/"
   cta2Button:
     icon: rebase_edit

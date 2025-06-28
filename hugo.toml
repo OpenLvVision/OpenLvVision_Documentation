@@ -24,7 +24,17 @@ title = "OpenLvVision"
 
 [menu]
 [[menu.primary]]
-    name  = "Docs"
-    url = "docs/"
-    identifier = "docs"
+    name  = "Installation"
+    url = "docs/installation/"
+    identifier = "Installation"
     weight = 1
+[[menu.primary]]
+    name  = "Documentation"
+    url = "docs/"
+    identifier = "Documentation"
+    weight = 2
+[[menu.primary]]
+    name  = "VIPM"
+    url = "https://www.vipm.io/publisher/openlvvision/"
+    identifier = "VIPM"
+    weight = 3
