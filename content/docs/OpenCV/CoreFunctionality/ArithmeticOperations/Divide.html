@@ -1,22 +1,38 @@
 ---
-weight: 4092000
+weight: 5010105
 draft: false
-title: "OverlayOvalBoundingBox"
+title: "Divide"
 toc: true
-description: "Overlays an overlay on top of an image.
-Draws it by the given bounding box coordinates."
-icon: "circle"
+description: "Performs per-element division of two arrays or a scalar by an array. "
+katex: true
+icon: pen_size_3
 ---
-HTML>
+<HTML>
 <HEAD>
 <META NAME="Author" CONTENT="">
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi"></A><H2>OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi</H2>
-<P>Overlays an overlay on top of an image.</P>
-<P>Draws it by the given bounding box coordinates.</P>
-<P><IMG SRC="/OverlayOvalBoundingBoxc.png" ALT="OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Divide.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Divide.vim</H2>
+<P>Performs per-element division of two arrays or a scalar by an array. </P>
+
+<p>The function divide performs per-element division of two arrays or a scalar by an array:</p>
+<ul>
+  <li><strong>Division of one array by another</strong>:<div>{{< katex >}}$
+  \texttt{dst}(I) = \texttt{saturate}(\texttt{src1}(I) \cdot \texttt{scale} / \texttt{src2}(I))
+  ${{< /katex >}}</div></li>
+
+  <li><strong>Division of a scalar by an array</strong> (when there is no <code>src1</code>):<div>{{< katex >}}$
+  \texttt{dst}(I) = \texttt{saturate}(\texttt{scale} / \texttt{src2}(I))
+  ${{< /katex >}}</div></li>
+</ul>
+
+<p>Different channels of multi-channel arrays are processed independently.</p>
+
+{{< alert context="warning" text="In case of floating point data there is no special defined behavior for zero src2(I) values. Regular floating-point division is used. Expect correct IEEE-754 behaviour for floating-point data (with NaN, Inf result values).Saturation is not applied when the output array has the depth CV_32S. You may even get result of an incorrect sign in the case of overflow." />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga6db555d30115642fedae0cda05604874" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/Dividec.png" ALT="OpenLvVision_OpenCv.lvlib:Divide.vim"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -67,95 +83,44 @@ HTML>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Image Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Src1</B> <P>First input array or image</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>GroupName</B> <P>Name of the overlay group you want to add to.</P>
+<B>Src2</B> <P>Second input array, image or constant</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cu32.png" ALT="cu32"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Color</B> <P>Color of the overlay.</P>
+<B>Dst</B> <P>Output array or image  that has the same size and number of channels as the input arrays or image.</P>
+<P>the depth is defined by src1/src2.</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cenum.png" ALT="cenum"></P>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
 </TD>
 <TD>
-<B>Drawing Mode (Frame)</B> <P>Drawing Mode  specifies whether to draw only the frame or fill in.</P>
+<B>Scale</B> <P>scalar factor. </P>
 </TD>
 </TR>
 </Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
-</TD>
-<TD>
-<B>BoundingBox</B> <P>Rectangle arround the oval</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Left</B> <P>X-coordinate of the left edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Top</B> <P>Y-coordinate of the top edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Right</B> <P>X-coordinate of the right edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Bottom</B> <P>Y-coordinate of the bottom edge pixel.</P>
-</TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -206,10 +171,11 @@ HTML>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Image Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Dst out</B> <P>Output array or image  that has the same size and number of channels as the input arrays or image.</P>
+<P>the depth is defined by src1/src2. </P>
 </TD>
 </TR>
 </Table>

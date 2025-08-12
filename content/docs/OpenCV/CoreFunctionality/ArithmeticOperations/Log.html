@@ -1,22 +1,29 @@
 ---
-weight: 4092000
+weight: 5010107
 draft: false
-title: "OverlayOvalBoundingBox"
+title: "Log"
 toc: true
-description: "Overlays an overlay on top of an image.
-Draws it by the given bounding box coordinates."
-icon: "circle"
+description: "Calculates the natural logarithm of every array element. Output on zero, negative and special (NaN, Inf) values is undefined."
+katex: true
+icon: line_curve 
 ---
-HTML>
+<HTML>
 <HEAD>
 <META NAME="Author" CONTENT="">
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi"></A><H2>OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi</H2>
-<P>Overlays an overlay on top of an image.</P>
-<P>Draws it by the given bounding box coordinates.</P>
-<P><IMG SRC="/OverlayOvalBoundingBoxc.png" ALT="OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Log.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Log.vim</H2>
+<P>Calculates the natural logarithm of every array element. Output on zero, negative and special (NaN, Inf) values is undefined.</P>
+
+<p>The function log calculates the natural logarithm of every element of the input array:</p>
+<div>{{< katex >}}$
+\texttt{dst}(I) = \log(\texttt{src}(I))
+${{< /katex >}}</div>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga937ecdce4679a77168730830a955bea7" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/Logc.png" ALT="OpenLvVision_OpenCv.lvlib:Log.vim"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -67,95 +74,24 @@ HTML>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Image Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Src</B> <P>First input array or image</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>GroupName</B> <P>Name of the overlay group you want to add to.</P>
+<B>Dst</B> <P>Output array or image  that has the same size and number of channels as the input arrays or image.</P>
+<P>the depth is defined by src1/src2.</P>
 </TD>
 </TR>
 </Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cu32.png" ALT="cu32"></P>
-</TD>
-<TD>
-<B>Color</B> <P>Color of the overlay.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cenum.png" ALT="cenum"></P>
-</TD>
-<TD>
-<B>Drawing Mode (Frame)</B> <P>Drawing Mode  specifies whether to draw only the frame or fill in.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
-</TD>
-<TD>
-<B>BoundingBox</B> <P>Rectangle arround the oval</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Left</B> <P>X-coordinate of the left edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Top</B> <P>Y-coordinate of the top edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Right</B> <P>X-coordinate of the right edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Bottom</B> <P>Y-coordinate of the bottom edge pixel.</P>
-</TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -206,10 +142,11 @@ HTML>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Image Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Dst out</B> <P>Output array or image  that has the same size and number of channels as the input arrays or image.</P>
+<P>the depth is defined by src1/src2. </P>
 </TD>
 </TR>
 </Table>

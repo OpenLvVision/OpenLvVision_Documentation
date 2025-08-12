@@ -1,22 +1,29 @@
 ---
-weight: 4092000
+weight: 5010104
 draft: false
-title: "OverlayOvalBoundingBox"
+title: "ConvertScaleAbs"
 toc: true
-description: "Overlays an overlay on top of an image.
-Draws it by the given bounding box coordinates."
-icon: "circle"
+description: "Scales, calculates absolute values, and converts the result to 8-bit. "
+katex: true
+icon: transform 
 ---
-HTML>
+<HTML>
 <HEAD>
 <META NAME="Author" CONTENT="">
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi"></A><H2>OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi</H2>
-<P>Overlays an overlay on top of an image.</P>
-<P>Draws it by the given bounding box coordinates.</P>
-<P><IMG SRC="/OverlayOvalBoundingBoxc.png" ALT="OpenLvVision_Overlays.lvlib:OverlayOvalBoundingBox.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:ConvertScaleAbs.vim"></A><H2>OpenLvVision_OpenCv.lvlib:ConvertScaleAbs.vim</H2>
+<P>Scales, calculates absolute values, and converts the result to 8-bit. </P>
+
+<p>On each element of the input array, the function convertScaleAbs performs three operations sequentially: scaling, taking an absolute value, and conversion to an unsigned 8-bit type:</p>
+<div>{{< katex >}}$
+\texttt{dst}(I) = \texttt{saturate\_cast<uchar>} \left( \left| \texttt{src}(I) \cdot \texttt{alpha} + \texttt{beta} \right| \right)
+${{< /katex >}}</div>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga3460e9c9f37b563ab9dd550c4d8c4e7d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/ConvertScaleAbsc.png" ALT="OpenLvVision_OpenCv.lvlib:ConvertScaleAbs.vim"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -67,95 +74,44 @@ HTML>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Image Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Src</B> <P>	input array.</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>GroupName</B> <P>Name of the overlay group you want to add to.</P>
+<B>Dst</B> <P>Output array or image  that has the same size and number of channels as the input arrays or image.</P>
+<P>the depth is defined by src1/src2.</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cu32.png" ALT="cu32"></P>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
 </TD>
 <TD>
-<B>Color</B> <P>Color of the overlay.</P>
+<B>Alpha</B> <P>optional scale factor. </P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cenum.png" ALT="cenum"></P>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
 </TD>
 <TD>
-<B>Drawing Mode (Frame)</B> <P>Drawing Mode  specifies whether to draw only the frame or fill in.</P>
+<B>Beta</B> <P>	optional delta added to the scaled values. </P>
 </TD>
 </TR>
 </Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
-</TD>
-<TD>
-<B>BoundingBox</B> <P>Rectangle arround the oval</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Left</B> <P>X-coordinate of the left edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Top</B> <P>Y-coordinate of the top edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Right</B> <P>X-coordinate of the right edge pixel.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Bottom</B> <P>Y-coordinate of the bottom edge pixel.</P>
-</TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -206,10 +162,11 @@ HTML>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Image Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Dst out</B> <P>Output array or image  that has the same size and number of channels as the input arrays or image.</P>
+<P>the depth is defined by src1/src2. </P>
 </TD>
 </TR>
 </Table>
