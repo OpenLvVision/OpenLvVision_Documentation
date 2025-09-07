@@ -1,11 +1,12 @@
 ---
-weight: 5011605
+weight: 5011301
 draft: false
-title: "MeanStdDev"
+title: "Reduce"
 toc: true
-description: "Calculates a mean and standard deviation of array elements."
-icon: bar_chart_4_bars
+description: "Reduces a matrix to a vector. 
+The function reduce reduces the matrix to a vector by treating the matrix rows/columns as a set of 1D vectors and performing the specified operation on the vectors until a single row/column is obtained. For example, the function can be used to compute horizontal and vertical projections of a raster image. In case of REDUCE_MAX and REDUCE_MIN, the output image should have the same type as the source one. In case of REDUCE_SUM, REDUCE_SUM2 and REDUCE_AVG, the output may have a larger element bit-depth to preserve accuracy. "
 katex: true
+icon: compress
 ---
 <HTML>
 <HEAD>
@@ -13,21 +14,13 @@ katex: true
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:MeanStdDev.vim"></A><H2>OpenLvVision_OpenCv.lvlib:MeanStdDev.vim</H2>
-<P>Calculates a mean and standard deviation of array elements.</P>
-
-<p>The function meanStdDev calculates the mean and the standard deviation of array elements independently for each channel and returns them via the output parameters:</p>
-<div>{{< katex >}}$
-\begin{array}{l}
-N = \sum\limits_{I, \ \texttt{mask}(I) \ne 0} 1 \\
-\texttt{mean}_c = \frac{\sum\limits_{I : \ \texttt{mask}(I) \ne 0} \texttt{src}(I)_c}{N} \\
-\texttt{stddev}_c = \sqrt{\frac{\sum\limits_{I : \ \texttt{mask}(I) \ne 0} \left( \texttt{src}(I)_c - \texttt{mean}_c \right)^2}{N}}
-\end{array}
-${{< /katex >}}</div>
+<A NAME="OpenLvVision_OpenCv.lvlib:Reduce.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Reduce.vim</H2>
+<P>Reduces a matrix to a vector. </P>
+<P>The function reduce reduces the matrix to a vector by treating the matrix rows/columns as a set of 1D vectors and performing the specified operation on the vectors until a single row/column is obtained. For example, the function can be used to compute horizontal and vertical projections of a raster image. In case of REDUCE_MAX and REDUCE_MIN, the output image should have the same type as the source one. In case of REDUCE_SUM, REDUCE_SUM2 and REDUCE_AVG, the output may have a larger element bit-depth to preserve accuracy. </P>
 
 <p><a
-href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f4004d59493d7c6a4354b301d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
-<P><IMG SRC="/MeanStdDevc.png" ALT="OpenLvVision_OpenCv.lvlib:MeanStdDev.vim"></P>
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga4b78072a303f29d9031d56e5638da78e" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/Reducec.png" ALT="OpenLvVision_OpenCv.lvlib:Reduce.vim"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -81,17 +74,31 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f40
 <P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Src</B> <P>	input array that should have from 1 to 4 channels.</P>
+<B>Src</B> <P>input 2D matrix. </P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+<P><IMG SRC="/cenum.png" ALT="cenum"></P>
 </TD>
 <TD>
-<B>Mask</B> <P>Mask - 8-bit single channel array or image, that specifies elements of the output image to be changed. </P>
+<B>ReduceType</B> <P>REDUCE_SUM =the output is the sum of all rows/columns of the matrix.</P>
+<P>REDUCE_AVG =  the output is the mean vector of all rows/columns of the matrix.</P>
+<P>REDUCE_MAX = the output is the maximum (column/row-wise) of all rows/columns of the matrix.</P>
+<P>REDUCE_MIN =  the output is the minimum (column/row-wise) of all rows/columns of the matrix.</P>
+<P>REDUCE_SUM2 =the output is the sum of all squared rows/columns of the matrix.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cenum.png" ALT="cenum"></P>
+</TD>
+<TD>
+<B>Dim</B> <P>dimension index along which the matrix is reduced. 0 means that the matrix is reduced to a single row. 1 means that the matrix is reduced to a single column. </P>
 </TD>
 </TR>
 </Table>
@@ -148,7 +155,7 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f40
 <P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Dst out</B> <P></P>
+<B>Src out</B> <P></P>
 </TD>
 </TR>
 </Table>
@@ -158,29 +165,7 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f40
 <P><IMG SRC="/i1ddbl.png" ALT="i1ddbl"></P>
 </TD>
 <TD>
-<B>Mean</B> <P>Calculated mean value</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/idbl.png" ALT="idbl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
-</TR>
-</Table>
-</UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/i1ddbl.png" ALT="i1ddbl"></P>
-</TD>
-<TD>
-<B>StandardDeviation</B> <P>calculated standard deviation.</P>
-</TD>
+<B>Dst</B> </TD>
 </TR>
 </Table>
 <UL>

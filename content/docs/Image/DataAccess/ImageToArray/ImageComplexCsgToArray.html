@@ -1,11 +1,10 @@
 ---
-weight: 5011604
+weight: 3301008
 draft: false
-title: "Mean"
+title: "ImageComplexCsgToArray"
 toc: true
-description: "Calculates an average (mean) of array elements."
-icon: bar_chart_4_bars
-katex: true
+Icon: "view_compact"
+description: "Copies the pixel into an 2D array without an border."
 ---
 <HTML>
 <HEAD>
@@ -13,20 +12,9 @@ katex: true
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:Mean.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Mean.vim</H2>
-<P>Calculates an average (mean) of array elements. </P>
-
-<p>The function mean calculates the mean value <code>M</code> of array elements, independently for each channel, and returns it:</p>
-<div>{{< katex >}}$
-\begin{array}{l}
-N = \sum\limits_{I : \ \texttt{mask}(I) \ne 0} 1 \\
-M_c = \frac{\sum\limits_{I : \ \texttt{mask}(I) \ne 0} \texttt{mtx}(I)_c}{N}
-\end{array}
-${{< /katex >}}</div>
-
-<p><a
-href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga191389f8a0e58180bb13a727782cd461" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
-<P><IMG SRC="/Meanc.png" ALT="OpenLvVision_OpenCv.lvlib:Mean.vim"></P>
+<A NAME="OpenLvVision_Image.lvlib:DataAccess.lvlib:ImageComplexCsgToArray.vi"></A><H2>OpenLvVision_Image.lvlib:DataAccess.lvlib:ImageComplexCsgToArray.vi</H2>
+<P>Copies the pixel into an 2D array without an border.</P>
+<P><IMG SRC="/ImageComplexCsgToArrayc.png" ALT="OpenLvVision_Image.lvlib:DataAccess.lvlib:ImageComplexCsgToArray.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -77,23 +65,65 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga191389f8a0
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
 </TD>
 <TD>
-<B>Src</B> <P>	input array that should have from 1 to 4 channels.</P>
+<B>Image Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
 </TD>
 <TD>
-<B>Mask</B> <P>Mask - 8-bit single channel array or image, that specifies elements of the output image to be changed. </P>
+<B>Optional Rectangle</B> <P>Rectangle to extract the data.</P>
 </TD>
 </TR>
 </Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Left</B> <P>X-coordinate of the left edge pixel.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Top</B> <P>Y-coordinate of the top edge pixel.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Right</B> <P>X-coordinate of the right edge pixel.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Bottom</B> <P>Y-coordinate of the bottom edge pixel.</P>
+</TD>
+</TR>
+</Table>
+</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -144,28 +174,27 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga191389f8a0
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
 </TD>
 <TD>
-<B>Dst out</B> <P></P>
+<B>Image Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/i1ddbl.png" ALT="i1ddbl"></P>
+<P><IMG SRC="/i2dcsg.png" ALT="i2dcsg"></P>
 </TD>
 <TD>
-<B>Mean</B> <P>Mean value of every channel</P>
-</TD>
+<B>Pixel</B> </TD>
 </TR>
 </Table>
 <UL>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/idbl.png" ALT="idbl"></P>
+<P><IMG SRC="/icsg.png" ALT="icsg"></P>
 </TD>
 <TD>
 <B>Numeric</B> </TD>

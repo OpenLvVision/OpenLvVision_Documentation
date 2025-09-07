@@ -1,11 +1,11 @@
 ---
-weight: 5011605
+weight: 5011303
 draft: false
-title: "MeanStdDev"
+title: "ReduceArgMin"
 toc: true
-description: "Calculates a mean and standard deviation of array elements."
-icon: bar_chart_4_bars
+description: "Finds indices of min elements along provided axis. "
 katex: true
+icon: stat_minus_1
 ---
 <HTML>
 <HEAD>
@@ -13,21 +13,14 @@ katex: true
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:MeanStdDev.vim"></A><H2>OpenLvVision_OpenCv.lvlib:MeanStdDev.vim</H2>
-<P>Calculates a mean and standard deviation of array elements.</P>
+<A NAME="OpenLvVision_OpenCv.lvlib:ReduceArgMin.vim"></A><H2>OpenLvVision_OpenCv.lvlib:ReduceArgMin.vim</H2>
+<P>Finds indices of min elements along provided axis. </P>
 
-<p>The function meanStdDev calculates the mean and the standard deviation of array elements independently for each channel and returns them via the output parameters:</p>
-<div>{{< katex >}}$
-\begin{array}{l}
-N = \sum\limits_{I, \ \texttt{mask}(I) \ne 0} 1 \\
-\texttt{mean}_c = \frac{\sum\limits_{I : \ \texttt{mask}(I) \ne 0} \texttt{src}(I)_c}{N} \\
-\texttt{stddev}_c = \sqrt{\frac{\sum\limits_{I : \ \texttt{mask}(I) \ne 0} \left( \texttt{src}(I)_c - \texttt{mean}_c \right)^2}{N}}
-\end{array}
-${{< /katex >}}</div>
+{{< alert context="warning" text="If input or output array is not continuous, this function will create an internal copy. NaN handling is left unspecified. The returned index is always in bounds of input matrix." />}}
 
 <p><a
-href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f4004d59493d7c6a4354b301d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
-<P><IMG SRC="/MeanStdDevc.png" ALT="OpenLvVision_OpenCv.lvlib:MeanStdDev.vim"></P>
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gaeecd548276bfb91b938989e66b722088" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/ReduceArgMinc.png" ALT="OpenLvVision_OpenCv.lvlib:ReduceArgMin.vim"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -81,17 +74,27 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f40
 <P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Src</B> <P>	input array that should have from 1 to 4 channels.</P>
+<B>Src</B> <P>	input single-channel array. </P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+<P><IMG SRC="/cenum.png" ALT="cenum"></P>
 </TD>
 <TD>
-<B>Mask</B> <P>Mask - 8-bit single channel array or image, that specifies elements of the output image to be changed. </P>
+<B>Axis</B> <P>	axis to reduce along. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>lastIndex</B> <P>whether to get the index of first or last occurrence of max. </P>
 </TD>
 </TR>
 </Table>
@@ -155,31 +158,10 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f40
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/i1ddbl.png" ALT="i1ddbl"></P>
+<P><IMG SRC="/i1di32.png" ALT="i1di32"></P>
 </TD>
 <TD>
-<B>Mean</B> <P>Calculated mean value</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/idbl.png" ALT="idbl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
-</TR>
-</Table>
-</UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/i1ddbl.png" ALT="i1ddbl"></P>
-</TD>
-<TD>
-<B>StandardDeviation</B> <P>calculated standard deviation.</P>
+<B>Dst</B> <P>Index of min element.</P>
 </TD>
 </TR>
 </Table>
@@ -187,7 +169,7 @@ href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f40
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/idbl.png" ALT="idbl"></P>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
 </TD>
 <TD>
 <B>Numeric</B> </TD>
