@@ -1,10 +1,10 @@
 ---
-weight: 4130000
+weight: 4110000
 draft: false
-title: "OverlayLine"
+title: "OverlayFeaturePoints"
 toc: true
-description: "Overlays an line on top of an image."
-icon: "diagonal_line"
+description: "Overlay of feature points.
+You can select the style and size."
 ---
 <HTML>
 <HEAD>
@@ -12,9 +12,10 @@ icon: "diagonal_line"
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Overlays.lvlib:OverlayLine.vi"></A><H2>OpenLvVision_Overlays.lvlib:OverlayLine.vi</H2>
-<P>Overlays an line on top of an image.</P>
-<P><IMG SRC="/OverlayLinec.png" ALT="OpenLvVision_Overlays.lvlib:OverlayLine.vi"></P>
+<A NAME="OpenLvVision_Overlays.lvlib:OverlayFeaturePoints.vi"></A><H2>OpenLvVision_Overlays.lvlib:OverlayFeaturePoints.vi</H2>
+<P>Overlay of feature points.</P>
+<P>You can select the style and size.</P>
+<P><IMG SRC="/OverlayFeaturePointsc.png" ALT="OpenLvVision_Overlays.lvlib:OverlayFeaturePoints.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -75,63 +76,13 @@ icon: "diagonal_line"
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
-</TD>
-<TD>
-<B>StartPoint</B> <P>Start point of the line</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
 <P><IMG SRC="/ci32.png" ALT="ci32"></P>
 </TD>
 <TD>
-<B>X</B> </TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Y</B> </TD>
-</TR>
-</Table>
-</UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
-</TD>
-<TD>
-<B>EndPoint</B> <P>End point of the line</P>
+<B>Size</B> <P>The size of the feature.</P>
 </TD>
 </TR>
 </Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>X</B> </TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Y</B> </TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -149,6 +100,64 @@ icon: "diagonal_line"
 </TD>
 <TD>
 <B>Color</B> <P>Color of the overlay.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/c1dnclst.png" ALT="c1dnclst"></P>
+</TD>
+<TD>
+<B>FeaturePoint</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>Point</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cenum.png" ALT="cenum"></P>
+</TD>
+<TD>
+<B>FeaturePointStyle</B> <P>Style of the feature:</P>
+<P>Cross</P>
+<P>TiltedCross</P>
+<P>Star</P>
+<P>Diamond</P>
+<P>Square</P>
+<P>TriangleUp</P>
+<P>TriangleDown</P>
+<P>Crosshair</P>
 </TD>
 </TR>
 </Table>

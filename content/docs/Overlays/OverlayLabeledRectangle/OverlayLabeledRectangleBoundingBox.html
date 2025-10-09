@@ -1,10 +1,9 @@
 ---
-weight: 4130000
+weight: 4122000
 draft: false
-title: "OverlayLine"
+title: "OverlayLabeledRectangleBoundingBox"
 toc: true
-description: "Overlays an line on top of an image."
-icon: "diagonal_line"
+description: "Overlays an rectangle with text on top of an image."
 ---
 <HTML>
 <HEAD>
@@ -12,9 +11,9 @@ icon: "diagonal_line"
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Overlays.lvlib:OverlayLine.vi"></A><H2>OpenLvVision_Overlays.lvlib:OverlayLine.vi</H2>
-<P>Overlays an line on top of an image.</P>
-<P><IMG SRC="/OverlayLinec.png" ALT="OpenLvVision_Overlays.lvlib:OverlayLine.vi"></P>
+<A NAME="OpenLvVision_Overlays.lvlib:OverlayLabeledRectangleBoundingBox.vi"></A><H2>OpenLvVision_Overlays.lvlib:OverlayLabeledRectangleBoundingBox.vi</H2>
+<P>Overlays an rectangle with text on top of an image.</P>
+<P><IMG SRC="/OverlayLabeledRectangleBoundingBoxc.png" ALT="OpenLvVision_Overlays.lvlib:OverlayLabeledRectangleBoundingBox.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -75,11 +74,31 @@ icon: "diagonal_line"
 <Table>
 <TR valign=TOP>
 <TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>Text</B> <P>Text to display on the label.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ccclst.png" ALT="ccclst"></P>
+</TD>
+<TD>
+<B>BoundingBox</B> <P>The coordinates of the rectangle s corners</P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
 <P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
 </TD>
 <TD>
-<B>StartPoint</B> <P>Start point of the line</P>
-</TD>
+<B>TopLeft</B> </TD>
 </TR>
 </Table>
 <UL>
@@ -108,8 +127,7 @@ icon: "diagonal_line"
 <P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
 </TD>
 <TD>
-<B>EndPoint</B> <P>End point of the line</P>
-</TD>
+<B>TopRight</B> </TD>
 </TR>
 </Table>
 <UL>
@@ -132,6 +150,75 @@ icon: "diagonal_line"
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>BottomRight</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>BottomLeft</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cu32.png" ALT="cu32"></P>
+</TD>
+<TD>
+<B>OverlayColor</B> <P>Color of the overlay.</P>
+</TD>
+</TR>
+</Table>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -145,10 +232,101 @@ icon: "diagonal_line"
 <Table>
 <TR valign=TOP>
 <TD>
+<P><IMG SRC="/ccclst.png" ALT="ccclst"></P>
+</TD>
+<TD>
+<B>TextSettings</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>Desired Font</B> <P><B>Desired Font (Application)</B> specifies the character type of the text.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>Strikeout?</B> <P><B>Strikeout?</B> causes the text to appear in strikeout if TRUE.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>Italic?</B> <P><B>Italic?</B> causes the text to appear in italic if TRUE.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>Underline?</B> <P><B>Underline?</B> causes the text to appear underlined if TRUE.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>Outline?</B> <P><B>Outline?</B> causes the text to appear in outline if TRUE.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>Shadow?</B> <P><B>Shadow?</B> causes the text to appear in shadow if TRUE.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>Bold?</B> <P><B>Bold?</B> causes the text to appear in bold if TRUE</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Size</B> <P><B>Size</B> is the size of the font in points.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
 <P><IMG SRC="/cu32.png" ALT="cu32"></P>
 </TD>
 <TD>
-<B>Color</B> <P>Color of the overlay.</P>
+<B>TextColor</B> <P>Color of the text.</P>
 </TD>
 </TR>
 </Table>
