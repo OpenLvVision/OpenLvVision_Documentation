@@ -1,7 +1,7 @@
 ---
 title: "OverlayLabeledRectangle"
 description: "Overlays an bitmap on top of an image."
-icon: "background_dot_small"
+icon: "activity_zone"
 weight: 4120000
 draft: false
 ---
