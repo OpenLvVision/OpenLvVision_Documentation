@@ -1,8 +1,8 @@
 ---
 title: "ChannelManipulation"
-description: ""
+description: "Extracs, swap or insert channels"
 icon: "toggle_off"
-weight: 5010300
+weight: 5010300000000
 draft: false
-icon:
+icon: palette
 ---

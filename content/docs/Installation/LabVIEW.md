@@ -2,7 +2,7 @@
 title: "1. LabVIEW"
 description: "Setting up the library for use on your system."
 icon: "terminal"
-weight: 1000001
+weight: 1000001000000
 draft: false
 ---
 

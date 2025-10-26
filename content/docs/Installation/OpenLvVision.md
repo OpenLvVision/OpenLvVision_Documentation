@@ -2,7 +2,7 @@
 title: "3. OpenLvVision SDK"
 description: "Setting up the library for use on your system."
 icon: "terminal"
-weight: 1000003
+weight: 1000003000000
 draft: false
 ---
 

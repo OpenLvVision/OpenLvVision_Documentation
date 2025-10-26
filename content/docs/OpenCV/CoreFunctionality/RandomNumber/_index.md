@@ -1,8 +1,8 @@
 ---
 title: "RandomNumber"
-description: ""
+description: "Generates random numbers"
 icon: "toggle_off"
-weight: 5011200
+weight: 5011200000000
 draft: false
-icon:
+icon: casino
 ---
