@@ -2,7 +2,7 @@
 title: "LinearAlgebra"
 description: ""
 icon: "toggle_off"
-weight: 5010900000000
+weight: 5010800000000
 draft: false
 icon:
 ---

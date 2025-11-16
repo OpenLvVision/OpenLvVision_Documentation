@@ -1,0 +1,46 @@
+{{/* Get the context passed to the partial.
+  .currentPage is the page we are currently viewing.
+  .Pages is the list of pages to loop through at this level.
+  .isNested tells us if we're at the root level or a deeper level.
+*/}}
+{{ $currentPage := .currentPage }}
+{{ $isNested := .isNested | default false }}
+
+{{/* Loop through the pages for this level, ordered by Weight */}}
+{{ range .Pages.ByWeight }}
+    {{/* Check if the current item in the loop is an ancestor of the page we're on */}}
+    {{ $active := in $currentPage.RelPermalink .RelPermalink }}
+
+    {{/* Check if this item is a section (i.e., has children) */}}
+    {{ if or (.Sections) (.Pages) }}
+        <li class="sidebar-dropdown {{ if $isNested }}nested{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }} {{ if $active }}current active{{ end }}">
+            <button class="btn">
+                {{ if and (eq .Site.Params.docs.sidebarIcons true) (not $isNested) -}}
+                    {{/* Only show icon for top-level dropdowns, matching original logic */}}
+                    <i class="material-icons me-2">{{- .Params.icon | default "notes" }}</i>
+                {{ end }}
+                {{- .Title }}
+            </button>
+            <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
+                <ul>
+                    {{/* *** THIS IS THE RECURSION ***
+                      Call this same partial again, but pass this item's children (.Pages)
+                      We also set isNested to true for all deeper levels.
+                    */}}
+                    {{ partial "sidebar-menu.html" (dict "Pages" .Pages "currentPage" $currentPage "isNested" true) }}
+                </ul>
+            </div>
+        </li>
+    {{ else }}
+        {{/* This is just a regular page link with no children */}}
+        <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}">
+            <a class="{{ if $isNested }}sidebar-nested-link{{ else }}sidebar-root-link{{ end }}" href="{{ .Permalink }}">
+                {{ if and (eq .Site.Params.docs.sidebarIcons true) (not $isNested) -}}
+                     {{/* Only show icon for top-level links, matching original logic */}}
+                    <i class="material-icons me-2">{{ .Params.icon }}</i>
+                {{ end }}
+                {{ .Title }}
+            </a>
+        </li>
+    {{ end }}
+{{ end }}

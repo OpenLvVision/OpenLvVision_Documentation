@@ -16,7 +16,7 @@ icon: remove
 <A NAME="OpenLvVision_OpenCv.lvlib:Subtract.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Subtract.vim</H2>
 <P>Calculates the per-element difference between two arrays or array and a scalar. </P>
 
-<p>The function subtract calculates:</p>
+<p>The function <code>subtract</code> calculates:</p>
 <ul>
   <li><strong>Difference between two arrays</strong> (when both input arrays have the same size and the same number of channels):<div>{{< katex >}}$
   \texttt{dst}(I) =  \texttt{saturate}(\texttt{src1}(I) - \texttt{src2}(I)) \quad \texttt{if mask}(I) \ne 0
@@ -103,7 +103,7 @@ icon: remove
 <P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Src2</B> <P>Second input array, image or constant</P>
+<B>Src2</B> <P>Second input array, image</P>
 </TD>
 </TR>
 </Table>
@@ -125,6 +125,16 @@ icon: remove
 </TD>
 <TD>
 <B>Mask</B> <P>Mask - 8-bit single channel array or image, that specifies elements of the output image to be changed. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+</TD>
+<TD>
+<B>Constant</B> <P>Constant is the value subtracted against Src1 for image-constant operations.</P>
 </TD>
 </TR>
 </Table>

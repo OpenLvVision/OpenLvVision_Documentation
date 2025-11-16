@@ -1,11 +1,11 @@
 ---
-weight: 5011211000004
+weight: 5011210000004
 draft: false
-title: "Uniform_SGL"
+title: "WriteState"
 toc: true
-description: "Returns uniformly distributed integer random number from [a,b) range "
+description: "Write the state to the rng object."
 katex: true
-icon: edit_audio
+icon: edit
 ---
 <HTML>
 <HEAD>
@@ -13,14 +13,12 @@ icon: edit_audio
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:RNG.lvclass:Uniform_SGL.vi"></A><H2>OpenLvVision_OpenCv.lvlib:RNG.lvclass:Uniform_SGL.vi</H2>
-<P>Returns uniformly distributed integer random number from [a,b) range </P>
-
-<p>The methods transform the state using the MWC algorithm and return the next uniformly-distributed random number of the specified type, deduced from the input parameter type, from the range [a, b). </p>
+<A NAME="OpenLvVision_OpenCv.lvlib:RNG.lvclass:RNG WriteState.vi"></A><H2>OpenLvVision_OpenCv.lvlib:RNG.lvclass:RNG WriteState.vi</H2>
+<P>Write the state to the rng object.</P>
 
 <p><a
-href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#a47acb9cf49f56ae6b86ab08c51f0f7d3" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
-<P><IMG SRC="/Uniform_SGLc.png" ALT="OpenLvVision_OpenCv.lvlib:RNG.lvclass:Uniform_SGL.vi"></P>
+href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#a993bd2e6a5a9b8f3b37ba6049b523136" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/RNGWriteStatec.png" ALT="OpenLvVision_OpenCv.lvlib:RNG.lvclass:RNG WriteState.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -79,27 +77,17 @@ href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#a47acb9cf49f56ae
 <TD>
 <B>RNG in</B> <P>Object by reference!</P>
 <P></P>
-<P>Random number generator. It encapsulates the state (currently, a 64-bit integer) and has methods to return scalar random values and to fill arrays with random values.</P>
+<P>Random number generator. It encapsulates the state (currently, a 64-bit integer) and has methods to return scalar random values and to fill arrays with random values.s</P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+<P><IMG SRC="/cu64.png" ALT="cu64"></P>
 </TD>
 <TD>
-<B>A</B> <P>lower inclusive boundary of the returned random number. </P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
-</TD>
-<TD>
-<B>B</B> <P>upper non-inclusive boundary of the returned random number. </P>
+<B>State</B> <P>Sate or seed</P>
 </TD>
 </TR>
 </Table>
@@ -162,16 +150,6 @@ href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#a47acb9cf49f56ae
 <B>RNG out</B> <P>Object by reference!</P>
 <P></P>
 <P>Random number generator. It encapsulates the state (currently, a 64-bit integer) and has methods to return scalar random values and to fill arrays with random values.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/isgl.png" ALT="isgl"></P>
-</TD>
-<TD>
-<B>RandomNumber</B> <P>Next random number.</P>
 </TD>
 </TR>
 </Table>

@@ -1,11 +1,11 @@
 ---
-weight: 5011210000006
+weight: 5011211000003
 draft: false
-title: "Gaussian"
+title: "Uniform_INT"
 toc: true
-description: "Returns the next random number sampled from the Gaussian distribution. "
+description: "Returns uniformly distributed integer random number from [a,b) range "
 katex: true
-icon: cadence
+icon: edit_audio
 ---
 <HTML>
 <HEAD>
@@ -13,14 +13,14 @@ icon: cadence
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:RNG.lvclass:Gaussian.vi"></A><H2>OpenLvVision_OpenCv.lvlib:RNG.lvclass:Gaussian.vi</H2>
-<P>Returns the next random number sampled from the Gaussian distribution. </P>
+<A NAME="OpenLvVision_OpenCv.lvlib:RNG.lvclass:RNG Uniform_INT.vi"></A><H2>OpenLvVision_OpenCv.lvlib:RNG.lvclass:RNG Uniform_INT.vi</H2>
+<P>Returns uniformly distributed integer random number from [a,b) range </P>
 
-<p>The method transforms the state using the MWC algorithm and returns the next random number from the Gaussian distribution N(0,sigma) . That is, the mean value of the returned random numbers is zero and the standard deviation is the specified sigma. </p>
+<p>The methods transform the state using the MWC algorithm and return the next uniformly-distributed random number of the specified type, deduced from the input parameter type, from the range [a, b). </p>
 
 <p><a
-href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#a8df8ce4dc7d15916cee743e5a884639d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
-<P><IMG SRC="/Gaussianc.png" ALT="OpenLvVision_OpenCv.lvlib:RNG.lvclass:Gaussian.vi"></P>
+href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#acde197860cea91e5aa896be8719457ae" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/RNGUniform_INTc.png" ALT="OpenLvVision_OpenCv.lvlib:RNG.lvclass:RNG Uniform_INT.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -86,10 +86,20 @@ href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#a8df8ce4dc7d1591
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
 </TD>
 <TD>
-<B>Sigma</B> <P>sigma	standard deviation of the distribution.</P>
+<B>A</B> <P>lower inclusive boundary of the returned random number. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>B</B> <P>upper non-inclusive boundary of the returned random number. </P>
 </TD>
 </TR>
 </Table>
@@ -158,10 +168,10 @@ href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#a8df8ce4dc7d1591
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/idbl.png" ALT="idbl"></P>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
 </TD>
 <TD>
-<B>Number</B> <P>Next random number</P>
+<B>RandomNumber</B> <P>Next random number.</P>
 </TD>
 </TR>
 </Table>

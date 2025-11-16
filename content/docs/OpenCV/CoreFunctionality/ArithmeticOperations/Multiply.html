@@ -7,7 +7,6 @@ description: "Calculates the per-element scaled product of two arrays."
 katex: true
 icon: asterisk
 ---
-
 <HTML>
 <HEAD>
 <META NAME="Author" CONTENT="">
@@ -17,7 +16,7 @@ icon: asterisk
 <A NAME="OpenLvVision_OpenCv.lvlib:Multiply.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Multiply.vim</H2>
 <P>	Calculates the per-element scaled product of two arrays. </P>
 
-<p>The function multiply calculates the per-element product of two arrays:</p>
+<p>The function <code>multiply</code> calculates the per-element product of two arrays:</p>
 <ul>
   <li><strong>Element-wise multiplication</strong> with optional scaling:<div>{{< katex >}}$
   \texttt{dst}(I) = \texttt{saturate}(\texttt{scale} \cdot \texttt{src1}(I) \cdot \texttt{src2}(I))
@@ -93,7 +92,7 @@ icon: asterisk
 <P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Src2</B> <P>Second input array, image or constant</P>
+<B>Src2</B> <P>Second input array, image</P>
 </TD>
 </TR>
 </Table>
@@ -115,6 +114,16 @@ icon: asterisk
 </TD>
 <TD>
 <B>Scale</B> <P>scalar factor. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+</TD>
+<TD>
+<B>Constant</B> <P>Constant is the value multiplied with Src1 for image-constant operations.</P>
 </TD>
 </TR>
 </Table>

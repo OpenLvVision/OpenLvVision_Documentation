@@ -2,7 +2,7 @@
 title: "FourierTransforms"
 description: ""
 icon: "toggle_off"
-weight: 5010700000000
+weight: 5010600000000
 draft: false
-icon:
+icon: planner_review
 ---

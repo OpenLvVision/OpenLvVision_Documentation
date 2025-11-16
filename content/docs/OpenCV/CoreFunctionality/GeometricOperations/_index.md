@@ -2,7 +2,7 @@
 title: "GeometricOperations"
 description: ""
 icon: "toggle_off"
-weight: 5010800000000
+weight: 5010700000000
 draft: false
-icon:
+icon: drag_pan
 ---

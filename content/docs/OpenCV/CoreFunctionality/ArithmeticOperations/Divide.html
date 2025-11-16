@@ -16,7 +16,7 @@ icon: pen_size_3
 <A NAME="OpenLvVision_OpenCv.lvlib:Divide.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Divide.vim</H2>
 <P>Performs per-element division of two arrays or a scalar by an array. </P>
 
-<p>The function divide performs per-element division of two arrays or a scalar by an array:</p>
+<p>The function <code>divide</code> performs per-element division of two arrays or a scalar by an array:</p>
 <ul>
   <li><strong>Division of one array by another</strong>:<div>{{< katex >}}$
   \texttt{dst}(I) = \texttt{saturate}(\texttt{src1}(I) \cdot \texttt{scale} / \texttt{src2}(I))
@@ -96,7 +96,7 @@ icon: pen_size_3
 <P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
 </TD>
 <TD>
-<B>Src2</B> <P>Second input array, image or constant</P>
+<B>Src2</B> <P>Second input array, image</P>
 </TD>
 </TR>
 </Table>
@@ -118,6 +118,16 @@ icon: pen_size_3
 </TD>
 <TD>
 <B>Scale</B> <P>scalar factor. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+</TD>
+<TD>
+<B>Constant</B> <P>Constant is the value divided against Src1 for image-constant operations.</P>
 </TD>
 </TR>
 </Table>
