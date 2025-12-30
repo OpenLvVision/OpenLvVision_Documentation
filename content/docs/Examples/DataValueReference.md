@@ -1,8 +1,7 @@
----
+﻿---
 title: "Data value reference"
 description: "Draw inside an image"
 icon: "format_color_fill"
-weight: 2000003000000
 draft: false
 ---
 This LabVIEW example demonstrates changing the color within a selected image region (ROI) using an OpenLvVision function and a Data Value Reference (DVR) for efficient in-place pixel modification.

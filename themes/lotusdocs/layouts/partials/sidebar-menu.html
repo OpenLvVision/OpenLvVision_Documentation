@@ -7,7 +7,7 @@
 {{ $isNested := .isNested | default false }}
 
 {{/* Loop through the pages for this level, ordered by Weight */}}
-{{ range .Pages.ByWeight }}
+{{ range (.Pages.ByTitle).ByWeight}}
     {{/* Check if the current item in the loop is an ancestor of the page we're on */}}
     {{ $active := in $currentPage.RelPermalink .RelPermalink }}
 

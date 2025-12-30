@@ -1,7 +1,6 @@
----
+﻿---
 title: "SimilarityMetrics"
-description: ""
-weight: 5011400000000
+description: "Quantifies the likeness of two datasets using metrics like PSNR or Mahalanobis distance."
 draft: false
-icon: 
+icon: compare_arrows
 ---

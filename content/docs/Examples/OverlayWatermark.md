@@ -1,8 +1,7 @@
----
+﻿---
 title: "Overlay watermark"
 description: "Draw inside an image"
 icon: "magnification_small"
-weight: 2000004000000
 draft: false
 ---
 # LabVIEW Image Overlay Example

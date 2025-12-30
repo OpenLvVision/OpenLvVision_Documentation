@@ -1,8 +1,7 @@
----
+﻿---
 title: "2. Ni Vision Development Module"
 description: "Install the image processing addons for LabVIEW" 
 icon: "visibility"
-weight: 1000002000000
 draft: false
 ---
 

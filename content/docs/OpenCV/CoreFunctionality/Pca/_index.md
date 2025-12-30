@@ -1,8 +1,7 @@
----
-title: "Covariance"
-description: ""
+﻿---
+title: "PCA"
+description: "Reduces dataset dimensionality while preserving the most significant variance."
 icon: "toggle_off"
-weight: 5000900000000
 draft: false
-icon:
+icon: blur_on
 ---

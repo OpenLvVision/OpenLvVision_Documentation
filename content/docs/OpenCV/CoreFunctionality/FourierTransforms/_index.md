@@ -1,8 +1,6 @@
----
+﻿---
 title: "FourierTransforms"
-description: ""
-icon: "toggle_off"
-weight: 5010600000000
+description: "Analyzes frequency components using discrete and fast Fourier transform algorithms."
 draft: false
-icon: planner_review
+icon: graphic_eq
 ---

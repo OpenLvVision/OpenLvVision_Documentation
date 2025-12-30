@@ -1,8 +1,6 @@
----
+﻿---
 title: "GeometricOperations"
-description: ""
-icon: "toggle_off"
-weight: 5010700000000
+description: "Transforms angles"
 draft: false
-icon: drag_pan
+icon: transform
 ---

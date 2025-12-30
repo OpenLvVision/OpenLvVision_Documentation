@@ -1,8 +1,7 @@
----
+﻿---
 title: "1. LabVIEW"
 description: "Setting up the library for use on your system."
 icon: "terminal"
-weight: 1000001000000
 draft: false
 ---
 
@@ -66,3 +65,4 @@ After the installation is complete, you'll need to activate LabVIEW:
 * **Log In:** You will be prompted to log in using your National Instruments account credentials. Ensure you use the same account associated with your LabVIEW license (or the Community Edition).
 
 {{< alert context="info" text="It's common that not every single component installed will require a separate license. You might receive notifications about unlicensed components, but these can often be ignored if the core LabVIEW functionality is licensed."/>}}
+

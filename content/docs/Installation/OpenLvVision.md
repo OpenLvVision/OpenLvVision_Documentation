@@ -1,19 +1,18 @@
----
+﻿---
 title: "3. OpenLvVision SDK"
 description: "Setting up the library for use on your system."
 icon: "terminal"
-weight: 1000003000000
 draft: false
 ---
 
 \
 OpenLVVision is built from several key libraries:
 
-* **[Vision Development Module](/docs/installation/vision-development/)** – Provides core image function implementations in LabVIEW.  
+* **[Vision Development Module](/docs/installation/vision-development/)** â€“ Provides core image function implementations in LabVIEW.  
   **Note:** For an executable, you'll need to install the Vision Development runtime.  
-* **[Image](/docs/installation/openlvvision/#2-image-module)** – Fundamental open-source image processing functions.  
-* **[Overlays](/docs/installation/openlvvision/#3-overlays-module)** – Tools for managing graphics and images placed on top of a base image.  
-* **[OpenCV (Preview)](/docs/installation/openlvvision/#4-opencv-preview)** – A widely used, free, open-source library for computer vision and image processing.  
+* **[Image](/docs/installation/openlvvision/#2-image-module)** â€“ Fundamental open-source image processing functions.  
+* **[Overlays](/docs/installation/openlvvision/#3-overlays-module)** â€“ Tools for managing graphics and images placed on top of a base image.  
+* **[OpenCV (Preview)](/docs/installation/openlvvision/#4-opencv-preview)** â€“ A widely used, free, open-source library for computer vision and image processing.  
 
 ![Overview](images/OpenLvVision_Overview.png)
 
@@ -28,7 +27,7 @@ All OpenLvVision packages are distributed via the **[JKI VI Package Manager (VIP
 
 2. **Enable the LabVIEW VI Server** (required for VIPM to communicate with LabVIEW):  
    - Open **LabVIEW**.  
-   - Go to **Tools → Options → VI Server**.  
+   - Go to **Tools â†’ Options â†’ VI Server**.  
    - Under **TCP/IP**, check **Enable TCP/IP**.  
    - Leave the **port** at its default value (each LabVIEW version has its own default port).  
    - Restart LabVIEW.  
@@ -52,15 +51,15 @@ All OpenLvVision packages are distributed via the **[JKI VI Package Manager (VIP
 {{% /tab %}}
 
 {{% tab tabName="From .vip Files" %}}
-1. Download the `.vip` files from the module’s **GitHub Releases** page.  
-2. Double-click the `.vip` file, or right-click → **Open with VIPM**.  
+1. Download the `.vip` files from the moduleâ€™s **GitHub Releases** page.  
+2. Double-click the `.vip` file, or right-click â†’ **Open with VIPM**.  
 3. Follow the installer prompts.  
 
 ![Install VIP File](images/VIP_FileInstall.png)
 {{% /tab %}}
 
 {{% tab tabName="From the Browser" %}}
-1. Go to the module’s package page on [vipm.io](https://www.vipm.io/).  
+1. Go to the moduleâ€™s package page on [vipm.io](https://www.vipm.io/).  
 2. Click **Install with VIPM** (this will launch VIPM automatically).  
 3. Confirm installation in VIPM.  
 
@@ -116,10 +115,10 @@ If you do not have internet access on the target machine, you can install the mo
 
 2. **Install the `.vip` file manually** via VIPM (see instructions in [Installing JKI VIPM](#1-installing-jki-vipm)).  
 
-3. **During installation**, VIPM will display a window *“Checking Connection”*.  
+3. **During installation**, VIPM will display a window *â€œChecking Connectionâ€*.  
    - If the installer cannot connect, it will automatically prompt you to select the downloaded `DLLs.zip`.  
    - If it does **not** prompt automatically:  
      - Press the **Cancel** button next to the download bar.  
-     - VIPM will then ask for the DLLs file manually — select the downloaded `DLLs.zip`.  
+     - VIPM will then ask for the DLLs file manually â€” select the downloaded `DLLs.zip`.  
 
    ![OpenCV Offline Installation Prompt](images/VIP_OpenCvOffline.png)

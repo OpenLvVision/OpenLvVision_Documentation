@@ -1,8 +1,7 @@
----
+﻿---
 title: "LinearAlgebra"
-description: ""
+description: "Core matrix operations including solving linear systems"
 icon: "toggle_off"
-weight: 5010800000000
 draft: false
-icon:
+icon: grid_4x4
 ---

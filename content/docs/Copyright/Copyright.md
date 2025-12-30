@@ -1,5 +1,4 @@
----
-weight: 9999999999999	
+﻿---
 draft: false
 title: "Copyright"
 toc: true
@@ -11,10 +10,10 @@ icon: "copyright"
 
 This project and its documentation are provided under multiple open-source licenses:
 
-- **OpenLvVision** — Licensed under the [BSD3](https://github.com/OpenLvVision/OpenLvVision_Image/blob/main/LICENSE).
-- **OpenCV** — Licensed under the [Apache License 2.0](https://github.com/opencv/opencv/blob/4.11.0/LICENSE).    
-- **Hugo** — Licensed under the [Apache License 2.0](https://github.com/gohugoio/hugo/blob/master/LICENSE).  
-- **Lotus Docs Theme** — Licensed under the [MIT License](https://github.com/colinwilson/lotusdocs/blob/release/LICENSE).
+- **OpenLvVision** â€” Licensed under the [BSD3](https://github.com/OpenLvVision/OpenLvVision_Image/blob/main/LICENSE).
+- **OpenCV** â€” Licensed under the [Apache License 2.0](https://github.com/opencv/opencv/blob/4.11.0/LICENSE).    
+- **Hugo** â€” Licensed under the [Apache License 2.0](https://github.com/gohugoio/hugo/blob/master/LICENSE).  
+- **Lotus Docs Theme** â€” Licensed under the [MIT License](https://github.com/colinwilson/lotusdocs/blob/release/LICENSE).
 
 Each component retains its own license and copyright terms.
 
@@ -498,16 +497,16 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 This project integrates or references third-party components subject to their respective copyrights:
 
 ```
-Copyright (C) 2000–2025, National Instruments Corporation
-Copyright (C) 2000–2022, Intel Corporation
-Copyright (C) 2009–2011, Willow Garage Inc.
-Copyright (C) 2009–2016, NVIDIA Corporation
-Copyright (C) 2010–2013, Advanced Micro Devices, Inc.
-Copyright (C) 2015–2023, OpenCV Foundation
-Copyright (C) 2008–2016, Itseez Inc.
-Copyright (C) 2019–2023, Xperience AI
-Copyright (C) 2019–2022, Shenzhen Institute of Artificial Intelligence and Robotics for Society
-Copyright (C) 2022–2023, Southern University of Science and Technology
+Copyright (C) 2000â€“2025, National Instruments Corporation
+Copyright (C) 2000â€“2022, Intel Corporation
+Copyright (C) 2009â€“2011, Willow Garage Inc.
+Copyright (C) 2009â€“2016, NVIDIA Corporation
+Copyright (C) 2010â€“2013, Advanced Micro Devices, Inc.
+Copyright (C) 2015â€“2023, OpenCV Foundation
+Copyright (C) 2008â€“2016, Itseez Inc.
+Copyright (C) 2019â€“2023, Xperience AI
+Copyright (C) 2019â€“2022, Shenzhen Institute of Artificial Intelligence and Robotics for Society
+Copyright (C) 2022â€“2023, Southern University of Science and Technology
 Copyright (C) 2023-2025, John Medland, all rights reserved.
 ```
 
@@ -518,3 +517,4 @@ All third-party copyrights are the property of their respective owners.
 ## Disclaimer
 
 This software is provided **"as is"**, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
+

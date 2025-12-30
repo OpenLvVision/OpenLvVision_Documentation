@@ -1,0 +1,204 @@
+---
+draft: false
+title: "Norm"
+toc: true
+description: "Calculates an absolute difference norm or a relative difference norm. "
+katex: true
+icon: straighten
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:Norm.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Norm.vim</H2>
+<P>Calculates an absolute difference norm or a relative difference norm. </P>
+
+<p>The function <code>norm</code> calculates the absolute norm of an array or the absolute difference norm of two arrays:</p>
+<ul>
+  <li><strong>Absolute Norm</strong> (when there is no second array <code>src2</code>):
+    <div>{{< katex >}}$
+    \| \texttt{src1} \|_L =
+    \begin{cases}
+    \| \texttt{src1} \|_{L\infty} = \max_I | \texttt{src1}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_INF} \\
+    \| \texttt{src1} \|_{L1} = \sum_I | \texttt{src1}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_L1} \\
+    \| \texttt{src1} \|_{L2} = \sqrt{\sum_I \texttt{src1}(I)^2} & \text{if } \texttt{normType} = \texttt{NORM\_L2}
+    \end{cases}
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>Absolute Difference Norm</strong> (when there is a second array <code>src2</code>):
+    <div>{{< katex >}}$
+    \| \texttt{src1} - \texttt{src2} \|_L =
+    \begin{cases}
+    \| \texttt{src1} - \texttt{src2} \|_{L\infty} = \max_I | \texttt{src1}(I) - \texttt{src2}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_INF} \\
+    \| \texttt{src1} - \texttt{src2} \|_{L1} = \sum_I | \texttt{src1}(I) - \texttt{src2}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_L1} \\
+    \| \texttt{src1} - \texttt{src2} \|_{L2} = \sqrt{\sum_I (\texttt{src1}(I) - \texttt{src2}(I))^2} & \text{if } \texttt{normType} = \texttt{NORM\_L2}
+    \end{cases}
+    ${{< /katex >}}</div>
+  </li>
+  
+  <li><strong>Relative Difference Norm</strong> (when <code>normType</code> is <code>NORM_RELATIVE</code>):
+    <div>{{< katex >}}$
+    \| \texttt{src1} - \texttt{src2} \|_L / \| \texttt{src2} \|_L
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>Where <code>I</code> is a multi-dimensional index of array elements. In case of multi-channel arrays, the norm is calculated over all channels.</p>
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga7c331fb8dd951707e184ef4e3f21dd33" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/Normc.png" ALT="OpenLvVision_OpenCv.lvlib:Norm.vim"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src1</B> <P>	first input array. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src2</B> <P>	second input array of the same size and the same type as src1. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Mask</B> <P>optional operation mask; it must have the same size as src1 and CV_8UC1 type. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>NormType</B> <P>NORM_L1</P>
+<P>NORM_L2</P>
+<P>NORM_L2SQR</P>
+<P>NORM_HAMMING</P>
+<P>NORM_HAMMING2</P>
+<P>NORM_TYPE_MASK </P>
+<P>NORM_RELATIVE</P>
+<P>NORM_MINMAX</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/idbl.png" ALT="idbl"></P>
+</TD>
+<TD>
+<B>Norm</B> </TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

@@ -1,8 +1,6 @@
----
+﻿---
 title: "MatrixImageTransformations"
-description: ""
-icon: "toggle_off"
-weight: 5011100000000
+description: "Modifies matrix orientation and geometry through rotation, flipping, boundary padding, and perspective transformations."
+icon: "image_aspect_ratio"
 draft: false
-icon:
 ---

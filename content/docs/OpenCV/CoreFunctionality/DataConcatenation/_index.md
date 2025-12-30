@@ -1,8 +1,7 @@
----
+﻿---
 title: "DataConcatenation"
-description: ""
+description: "Joins multiple arrays or matrices vertically or horizontally into a single structure"
 icon: "toggle_off"
-weight: 5010500000000
 draft: false
 icon: combine_columns
 ---

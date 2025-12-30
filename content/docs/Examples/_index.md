@@ -1,7 +1,7 @@
----
+﻿---
 title: "Examples"
 description: "LabVIEW Examples"
 icon: "auto_stories"
-weight: 2000000000000
 draft: false
+weight: 2
 ---

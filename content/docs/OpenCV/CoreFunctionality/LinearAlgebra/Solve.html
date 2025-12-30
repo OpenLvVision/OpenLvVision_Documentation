@@ -1,0 +1,206 @@
+---
+draft: false
+title: "Solve"
+toc: true
+description: "Solves one or more linear systems or least-squares problems. "
+katex: true
+icon: key
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:Solve.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Solve.vim</H2>
+<P>Solves one or more linear systems or least-squares problems. </P>
+
+<p>The function <code>solve</code> solves a linear system or least-squares problem:</p>
+<ul>
+  <li><strong>Linear System Solution</strong>:
+    <div>{{< katex >}}$
+    \texttt{dst} = \arg \min_X \| \texttt{src1} \cdot X - \texttt{src2} \|
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>The function finds the result <code>dst</code> (or <code>X</code> in the formula) that satisfies the linear system:</p>
+<div>{{< katex >}}$
+\texttt{src1} \cdot \texttt{dst} = \texttt{src2}
+${{< /katex >}}</div>
+
+<p>If <code>src1</code> is a non-singular square matrix, the solution is exact (<code>DECOMP_LU</code> or <code>DECOMP_CHOLESKY</code>). Otherwise, the function calculates the best least-squares solution (<code>DECOMP_SVD</code> or <code>DECOMP_QR</code>).</p>
+
+{{< alert context="warning" text="The function returns a boolean value. It returns true if the matrix src1 is non-singular and the solution was found, and false otherwise." />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga12b43690dbd31fed96f213eefead2373" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/Solvec.png" ALT="OpenLvVision_OpenCv.lvlib:Solve.vim"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src1</B> <P>	input matrix on the left-hand side of the system. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src2</B> <P>input matrix on the right-hand side of the system. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>DecompTypes</B> <P>solution (matrix inversion) method:</P>
+<P></P>
+<P>DECOMP_LU: Gaussian elimination with the optimal pivot element chosen.</P>
+<P></P>
+<P>DECOMP_SVD : singular value decomposition (SVD) method; the system can be over-defined and/or the matrix</P>
+<P></P>
+<P>DECOMP_EIG: eigenvalue decomposition; the matrix src1 must be symmetrical</P>
+<P></P>
+<P>DECOMP_CHOLESKY: Cholesky factorization. he matrix src1 must be symmetrical and positively defined.</P>
+<P></P>
+<P>DECOMP_QR: QR factorization; the system can be over-defined and/or the matrix src1 can be singular</P>
+<P></P>
+<P>DECOMP_NORMAL:while all the previous flags are mutually exclusive, this flag can be used together with any of the previous; it means that the normal equations</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>solutionFound</B> <P>If an solution was found</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/i2ddbl.png" ALT="i2ddbl"></P>
+</TD>
+<TD>
+<B>Dst</B> <P>output solution. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/idbl.png" ALT="idbl"></P>
+</TD>
+<TD>
+<B>Numeric</B> </TD>
+</TR>
+</Table>
+</UL>
+</BODY>
+</HTML>
