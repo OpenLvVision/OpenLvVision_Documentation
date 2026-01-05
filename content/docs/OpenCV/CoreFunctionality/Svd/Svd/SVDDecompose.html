@@ -1,0 +1,157 @@
+---
+draft: false
+title: "Decompose"
+toc: true
+description: "the operator that performs SVD. The previously allocated u, w and vt are released. "
+katex: true
+icon: memory
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:SVD.lvclass:SVD Decompose.vim"></A><H2>OpenLvVision_OpenCv.lvlib:SVD.lvclass:SVD Decompose.vim</H2>
+<P>the operator that performs SVD. The previously allocated u, w and vt are released. </P>
+
+<p><a href="https://docs.opencv.org/4.11.0/df/df7/classcv_1_1SVD.html#ae23038399a74e11ee2c039c6e380126e" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/SVDDecomposec.png" ALT="OpenLvVision_OpenCv.lvlib:SVD.lvclass:SVD Decompose.vim"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_SVDlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_SVDlvclass"></P>
+</TD>
+<TD>
+<B>SVD</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src</B> <P>decomposed matrix. The depth has to be CV_32F or CV_64F.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Flags</B> <P>MODIFY_A: allow the algorithm to modify the decomposed matrix; it can save space and speed up processing. currently ignored.</P>
+<P></P>
+<P>NO_UV: indicates that only a vector of singular values `w` is to be processed, while u and vt will be set to empty matrices</P>
+<P></P>
+<P>FULL_UV: when the matrix is not square, by default the algorithm produces u and vt matrices of sufficiently large size for the further A reconstruction; if, however, FULL_UV flag is specified, u and vt will be full-size square orthogonal matrices.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_SVDlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_SVDlvclass"></P>
+</TD>
+<TD>
+<B>SVD</B> </TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

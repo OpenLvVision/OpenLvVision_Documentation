@@ -1,0 +1,134 @@
+---
+draft: false
+title: "CheckHardware"
+toc: true
+description: "The function returns true if the host hardware supports the specified feature. When user calls setUseOptimized(false), the subsequent calls to checkHardwareSupport() will return false until setUseOptimized(true) is called. This way user can dynamically switch on and off the optimized code in OpenCV. "
+katex: true
+icon: fact_check
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:CheckHardware.vi"></A><H2>OpenLvVision_OpenCv.lvlib:CheckHardware.vi</H2>
+<P>The function returns true if the host hardware supports the specified feature. When user calls setUseOptimized(false), the subsequent calls to checkHardwareSupport() will return false until setUseOptimized(true) is called. This way user can dynamically switch on and off the optimized code in OpenCV. </P>
+
+<p><a href="https://docs.opencv.org/4.11.0/db/de0/group__core__utils.html#ga83400136ccc28490087722ef5b3a27d9" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
+<P><IMG SRC="/CheckHardwarec.png" ALT="OpenLvVision_OpenCv.lvlib:CheckHardware.vi"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>CpuFeatures</B> <P></P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>isSupported</B> </TD>
+</TR>
+</Table>
+</BODY>
+</HTML>
