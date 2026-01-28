@@ -37,7 +37,7 @@ imageText:
   template: image text
 
   title: Open-Source power for your LabVIEW vision applications
-  subtitle: Maximize your LabVIEW vision applications without the overhead of costly licenses. OpenLvVision offers an advanced, open-source image processing library meticulously engineered for native integration and high performance directly within your LabVIEW environment.
+  subtitle: OpenLvVision offers an advanced, open-source image processing library meticulously engineered for native integration and high performance directly within your LabVIEW environment.
 
   image:
     path: "images/"

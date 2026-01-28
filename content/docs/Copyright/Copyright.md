@@ -10,10 +10,12 @@ icon: "copyright"
 
 This project and its documentation are provided under multiple open-source licenses:
 
-- **OpenLvVision** â€” Licensed under the [BSD3](https://github.com/OpenLvVision/OpenLvVision_Image/blob/main/LICENSE).
-- **OpenCV** â€” Licensed under the [Apache License 2.0](https://github.com/opencv/opencv/blob/4.11.0/LICENSE).    
-- **Hugo** â€” Licensed under the [Apache License 2.0](https://github.com/gohugoio/hugo/blob/master/LICENSE).  
+- **OpenLvVision**  Licensed under the [BSD3](https://github.com/OpenLvVision/OpenLvVision_Image/blob/main/LICENSE).
+- **OpenCV**  Licensed under the [Apache License 2.0](https://github.com/opencv/opencv/blob/4.11.0/LICENSE).    
+- **Hugo**  Licensed under the [Apache License 2.0](https://github.com/gohugoio/hugo/blob/master/LICENSE).
+- **OpenBLAS** Licensed under the [BSD3](https://github.com/OpenMathLib/OpenBLAS?tab=BSD-3-Clause-1-ov-file#readme).   
 - **Lotus Docs Theme** â€” Licensed under the [MIT License](https://github.com/colinwilson/lotusdocs/blob/release/LICENSE).
+
 
 Each component retains its own license and copyright terms.
 
@@ -22,7 +24,7 @@ Each component retains its own license and copyright terms.
 ```
 BSD 3-Clause License
 
-Copyright (c) 2025, Lukas Kamleitner
+Copyright (c) 2026, Lukas Kamleitner
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -464,6 +466,42 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+```
+---
+### OpenBLAS
+```
+
+Copyright (c) 2011-2014, The OpenBLAS Project
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+   1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+   2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+   3. Neither the name of the OpenBLAS project nor the names of 
+      its contributors may be used to endorse or promote products 
+      derived from this software without specific prior written 
+      permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
 ```
 ---

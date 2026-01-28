@@ -7,12 +7,8 @@ draft: false
 
 ## Licensing
 
-Internally the NI Vision Development Module is structured into multiple libraries. \
-OpenLvVision utilizes the core library (`nivissvc.dll`) for fundamental LabVIEW image data type management, and this does **not** require a license. \
-In contrast, advanced image processing functions reside within separate, licensed DLLs (like `nivision.dll`). \
-OpenLvVision's goal is to offer free, open-source alternatives to these licensed advanced functions.
-
-{{< alert context="success" text= "Core image handling functions for Ni-Vision-Development is license-free, will be used by OpenLvVision"/>}} 
+OpenLvVision currently interacts with the core library (nivissvc.dll) to manage fundamental LabVIEW image data types. \
+While our testing indicates that this specific usage does not technically trigger a software activation prompt, users must be aware that these files remain the intellectual property of NI.
 
 ## Installation
 
