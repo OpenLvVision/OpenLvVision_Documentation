@@ -8,11 +8,10 @@ draft: false
 \
 OpenLVVision is built from several key libraries:
 
-* **[Vision Development Module](/docs/installation/vision-development/)** â€“ Provides core image function implementations in LabVIEW.  
-  **Note:** For an executable, you'll need to install the Vision Development runtime.  
-* **[Image](/docs/installation/openlvvision/#2-image-module)** â€“ Fundamental open-source image processing functions.  
-* **[Overlays](/docs/installation/openlvvision/#3-overlays-module)** â€“ Tools for managing graphics and images placed on top of a base image.  
-* **[OpenCV (Preview)](/docs/installation/openlvvision/#4-opencv-preview)** â€“ A widely used, free, open-source library for computer vision and image processing.  
+* **[Vision Common Resources](/docs/installation/vision-common-resources/)** Provides core image function implementations in LabVIEW.  
+* **[Image](/docs/installation/openlvvision/#2-image-module)** Fundamental open-source image processing functions.  
+* **[Overlays](/docs/installation/openlvvision/#3-overlays-module)** Tools for managing graphics and images placed on top of a base image.  
+* **[OpenCV](/docs/installation/openlvvision/#4-opencv-preview)**  A widely used, free, open-source library for computer vision and image processing.  
 
 ![Overview](images/OpenLvVision_Overview.png)
 
@@ -99,7 +98,7 @@ A free, widely used, open-source library for computer vision and image processin
 
 #### Download Links
 - [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_OpenCv/releases)  
-- [VIPM Package]() (coming soon)  
+- [VIPM Package](https://www.vipm.io/package/openlvvision_lib_openlvvision_opencv/) 
 
 #### Offline Installation
 
