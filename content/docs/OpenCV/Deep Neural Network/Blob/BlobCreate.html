@@ -1,9 +1,11 @@
 ---
-weight: 1000
 draft: false
-title: "Cast"
+title: "Create"
 toc: true
-description: "Converts  the image s pixel data type. "
+description: "Object by reference!
+Default constructor."
+katex: true
+icon: docs_add_on
 ---
 <HTML>
 <HEAD>
@@ -11,9 +13,10 @@ description: "Converts  the image s pixel data type. "
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></A><H2>OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi</H2>
-<P>Converts  the image's pixel data type. </P>
-<P><IMG SRC="/Castc.png" ALT="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Blob.lvclass:Blob Create.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Blob.lvclass:Blob Create.vi</H2>
+<P>Object by reference!</P>
+<P>Default constructor.</P>
+<P><IMG SRC="/BlobCreatec.png" ALT="OpenLvVision_OpenCv.lvlib:Blob.lvclass:Blob Create.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -58,85 +61,6 @@ description: "Converts  the image s pixel data type. "
 <P></P>
 <P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
 </TD>
-</TR>
-</Table>
-</UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
-</TD>
-<TD>
-<B>Image Src Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
-</TD>
-<TD>
-<B>Image Dst Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cenum.png" ALT="cenum"></P>
-</TD>
-<TD>
-<B>Image Type</B> <P>ImageFormat enum defines pixel data type: </P>
-<P>MonoU8 (8-bit unsigned ), </P>
-<P>MonoU16 (16-bit unsigned), </P>
-<P>MonoI16 (16-bit signed), </P>
-<P>MonoSGL (single-precision float), </P>
-<P>ColorU32 (8x4 unsigned integer, RGBA), </P>
-<P>ColorU64 (16x4 unsigned integer, RGBA).</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cu32.png" ALT="cu32"></P>
-</TD>
-<TD>
-<B>Method</B> <P>- Use Bit Depth (0): Casts based on the image's bit depth information. Only works for integer types.</P>
-<P>- Shift (1): Casts by right-shifting the pixel values by a specified &quot;Number of Shifts&quot;. Only works for integer types.</P>
-<P>- Use Lookup Table (2): Casts using a provided &quot;Lookup Table&quot;. Works for MonoU8, MonoU16, MonoSGL</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Number of Shifts</B> <P>This specifies the number of bits to right-shift the pixel values during casting.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/c1dsgl.png" ALT="c1dsgl"></P>
-</TD>
-<TD>
-<B>Lookup Table</B> <P>Array where the index is the original value, and the values at that indexs are the new values.</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
 </TR>
 </Table>
 </UL>
@@ -190,10 +114,10 @@ description: "Converts  the image s pixel data type. "
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Bloblvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Bloblvclass"></P>
 </TD>
 <TD>
-<B>Image Dst Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Blob</B> <P>A 4-dimensional tensor (N, C, H, W) containing preprocessed image data.</P>
 </TD>
 </TR>
 </Table>

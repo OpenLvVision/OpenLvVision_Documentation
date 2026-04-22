@@ -11,7 +11,7 @@ OpenLVVision is built from several key libraries:
 * **[Vision Common Resources](/docs/installation/vision-common-resources/)** Provides core image function implementations in LabVIEW.  
 * **[Image](/docs/installation/openlvvision/#2-image-module)** Fundamental open-source image processing functions.  
 * **[Overlays](/docs/installation/openlvvision/#3-overlays-module)** Tools for managing graphics and images placed on top of a base image.  
-* **[OpenCV](/docs/installation/openlvvision/#4-opencv-preview)**  A widely used, free, open-source library for computer vision and image processing.  
+* **[OpenCV](/docs/installation/openlvvision/#4-opencv)**  A widely used, free, open-source library for computer vision and image processing.  
 
 ![Overview](images/OpenLvVision_Overview.png)
 
@@ -26,7 +26,7 @@ All OpenLvVision packages are distributed via the **[JKI VI Package Manager (VIP
 
 2. **Enable the LabVIEW VI Server** (required for VIPM to communicate with LabVIEW):  
    - Open **LabVIEW**.  
-   - Go to **Tools â†’ Options â†’ VI Server**.  
+   - Go to **Tools Options VI Server**.  
    - Under **TCP/IP**, check **Enable TCP/IP**.  
    - Leave the **port** at its default value (each LabVIEW version has its own default port).  
    - Restart LabVIEW.  
@@ -90,7 +90,7 @@ Provides functions for managing overlays (graphics and annotations) on images.
 
 ---
 
-## 4. OpenCv Preview
+## 4. OpenCv
 
 A free, widely used, open-source library for computer vision and image processing.
 
@@ -102,22 +102,24 @@ A free, widely used, open-source library for computer vision and image processin
 
 #### Offline Installation
 
-If you do not have internet access on the target machine, you can install the module manually.  
+If you do not have internet access on the target machine, you can install the module manually. 
 
-1. **Download the required files** from [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_OpenCv/releases):  
-   - The `.vip` file (the package itself)  
-   - `DLLs.zip`  
-     - Use `DLLs_x64` for **LabVIEW 64-bit**  
-     - Use `DLLs_x86` for **LabVIEW 32-bit** or **LabVIEW Community Edition**  
+1. **Download the required files:**
+   - **OpenCV:** [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_OpenCv/releases)
+   - **Dependencies:** [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_OpenCv_Dependencies/releases/)
+   - The `.vip` file (the package itself)
+   - The associated `.zip` files:
+     - Use the `x64` zips for **LabVIEW 64-bit**
+     - Use the `x86` zips for **LabVIEW 32-bit** or **LabVIEW Community Edition**
 
    ![OpenCV Required Files](images/VIP_OpenCvFiles.png)
 
-2. **Install the `.vip` file manually** via VIPM (see instructions in [Installing JKI VIPM](#1-installing-jki-vipm)).  
+2. **Install the `.vip` file manually** via VIPM (see instructions in [Installing JKI VIPM](#1-installing-jki-vipm)). 
 
-3. **During installation**, VIPM will display a window *â€œChecking Connectionâ€*.  
-   - If the installer cannot connect, it will automatically prompt you to select the downloaded `DLLs.zip`.  
-   - If it does **not** prompt automatically:  
-     - Press the **Cancel** button next to the download bar.  
-     - VIPM will then ask for the DLLs file manually â€” select the downloaded `DLLs.zip`.  
+3. **During installation**, VIPM will display a window checking the connection.
+   - If the installer cannot connect, it will automatically prompt you to select the downloaded `.zip` files.
+   - If it does **not** prompt automatically:
+     - Press the **Use offline files** button next to the download bar.
+     - VIPM will then ask for the `.zip` files manually.
 
    ![OpenCV Offline Installation Prompt](images/VIP_OpenCvOffline.png)

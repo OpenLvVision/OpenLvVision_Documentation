@@ -1,9 +1,10 @@
 ---
-weight: 1000
 draft: false
-title: "Cast"
+title: "FromImage"
 toc: true
-description: "Converts  the image s pixel data type. "
+description: "Creates 4-dimensional blob from image. Optionally resizes and crops image from center, subtract mean values, scales values by scalefactor, swap Blue and Red channels. "
+katex: true
+icon: image
 ---
 <HTML>
 <HEAD>
@@ -11,9 +12,11 @@ description: "Converts  the image s pixel data type. "
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></A><H2>OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi</H2>
-<P>Converts  the image's pixel data type. </P>
-<P><IMG SRC="/Castc.png" ALT="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Blob.lvclass:Blob FromImage.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Blob.lvclass:Blob FromImage.vim</H2>
+<P>Creates 4-dimensional blob from image. Optionally resizes and crops image from center, subtract mean values, scales values by scalefactor, swap Blue and Red channels. </P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d6/d0f/group__dnn.html#ga29f34df9376379a603acd8df581ac8d7" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/BlobFromImagec.png" ALT="OpenLvVision_OpenCv.lvlib:Blob.lvclass:Blob FromImage.vim"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -64,20 +67,100 @@ description: "Converts  the image s pixel data type. "
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
 </TD>
 <TD>
-<B>Image Src Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>ScaleFactor</B> <P>multiplier for images values. </P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
 </TD>
 <TD>
-<B>Image Dst Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Size</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>SwapRB</B> <P>flag which indicates that swap first and last channels in 3-channel image is necessary. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>Crop</B> <P>flag which indicates whether image will be cropped after resize or not </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/c1ddbl.png" ALT="c1ddbl"></P>
+</TD>
+<TD>
+<B>Mean</B> <P>with mean values which are subtracted from channels. Values are intended to be in (mean-R, mean-G, mean-B) order if image has BGR ordering and swapRB is true. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+</TD>
+<TD>
+<B>Numeric</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Image</B> <P>input image (with 1-, 3- or 4-channels). </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Bloblvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Bloblvclass"></P>
+</TD>
+<TD>
+<B>Blob</B> <P></P>
 </TD>
 </TR>
 </Table>
@@ -87,59 +170,10 @@ description: "Converts  the image s pixel data type. "
 <P><IMG SRC="/cenum.png" ALT="cenum"></P>
 </TD>
 <TD>
-<B>Image Type</B> <P>ImageFormat enum defines pixel data type: </P>
-<P>MonoU8 (8-bit unsigned ), </P>
-<P>MonoU16 (16-bit unsigned), </P>
-<P>MonoI16 (16-bit signed), </P>
-<P>MonoSGL (single-precision float), </P>
-<P>ColorU32 (8x4 unsigned integer, RGBA), </P>
-<P>ColorU64 (16x4 unsigned integer, RGBA).</P>
+<B>DDepth</B> <P>	Depth of output blob. Choose CV_32F or CV_8U.</P>
 </TD>
 </TR>
 </Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cu32.png" ALT="cu32"></P>
-</TD>
-<TD>
-<B>Method</B> <P>- Use Bit Depth (0): Casts based on the image's bit depth information. Only works for integer types.</P>
-<P>- Shift (1): Casts by right-shifting the pixel values by a specified &quot;Number of Shifts&quot;. Only works for integer types.</P>
-<P>- Use Lookup Table (2): Casts using a provided &quot;Lookup Table&quot;. Works for MonoU8, MonoU16, MonoSGL</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Number of Shifts</B> <P>This specifies the number of bits to right-shift the pixel values during casting.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/c1dsgl.png" ALT="c1dsgl"></P>
-</TD>
-<TD>
-<B>Lookup Table</B> <P>Array where the index is the original value, and the values at that indexs are the new values.</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -190,10 +224,10 @@ description: "Converts  the image s pixel data type. "
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Bloblvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Bloblvclass"></P>
 </TD>
 <TD>
-<B>Image Dst Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
+<B>Blob out</B> <P>A 4-dimensional tensor (N, C, H, W) containing preprocessed image data.</P>
 </TD>
 </TR>
 </Table>

@@ -1,0 +1,176 @@
+---
+draft: false
+title: "GetAvailableBackends"
+toc: true
+description: "Retruns the available backends and its targets"
+katex: true
+icon: code
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:GetAvailableBackends.vi"></A><H2>OpenLvVision_OpenCv.lvlib:GetAvailableBackends.vi</H2>
+<P>Retruns the available backends and its targets</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d6/d0f/group__dnn.html#gab691d0cb65a60adcb0291ea5bf98f438" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/GetAvailableBackendsc.png" ALT="OpenLvVision_OpenCv.lvlib:GetAvailableBackends.vi"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/i1dnclst.png" ALT="i1dnclst"></P>
+</TD>
+<TD>
+<B>Backends</B> <P>List of all available backends and targets</P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/inclst.png" ALT="inclst"></P>
+</TD>
+<TD>
+<B>BackendTarget</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ienum.png" ALT="ienum"></P>
+</TD>
+<TD>
+<B>Backend</B> <P>DNN_BACKEND_DEFAULT</P>
+<P>DNN_BACKEND_HALIDE</P>
+<P>DNN_BACKEND_INFERENCE_ENGINE (OpenVino)</P>
+<P>DNN_BACKEND_OPENCV</P>
+<P>DNN_BACKEND_VKCOM</P>
+<P>DNN_BACKEND_CUDA</P>
+<P>DNN_BACKEND_WEBNN</P>
+<P>DNN_BACKEND_TIMVX</P>
+<P>DNN_BACKEND_CANN</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ienum.png" ALT="ienum"></P>
+</TD>
+<TD>
+<B>Target</B> <P>DNN_TARGET_CPU</P>
+<P>DNN_TARGET_OPENCL</P>
+<P>DNN_TARGET_OPENCL_FP16</P>
+<P>DNN_TARGET_MYRIAD</P>
+<P>DNN_TARGET_VULKAN</P>
+<P>DNN_TARGET_FPGA</P>
+<P>DNN_TARGET_CUDA</P>
+<P>DNN_TARGET_CUDA_FP16</P>
+<P>DNN_TARGET_HDDL</P>
+<P>DNN_TARGET_NPU</P>
+<P>DNN_TARGET_CPU_FP16</P>
+</TD>
+</TR>
+</Table>
+</UL>
+</UL>
+</BODY>
+</HTML>

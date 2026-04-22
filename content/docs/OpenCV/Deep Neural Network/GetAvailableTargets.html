@@ -1,9 +1,10 @@
 ---
-weight: 1000
 draft: false
-title: "Cast"
+title: "GetAvailableTargets"
 toc: true
-description: "Converts  the image s pixel data type. "
+description: "Retruns for an backend the supported targets"
+katex: true
+icon: developer_board
 ---
 <HTML>
 <HEAD>
@@ -11,9 +12,11 @@ description: "Converts  the image s pixel data type. "
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></A><H2>OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi</H2>
-<P>Converts  the image's pixel data type. </P>
-<P><IMG SRC="/Castc.png" ALT="OpenLvVision_Image.lvlib:Management.lvlib:Cast.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:GetAvailableTargets.vi"></A><H2>OpenLvVision_OpenCv.lvlib:GetAvailableTargets.vi</H2>
+<P>Retruns for an backend the supported targets</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d6/d0f/group__dnn.html#ga711e5056b6642b33d9480c98c6889f56" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/GetAvailableTargetsc.png" ALT="OpenLvVision_OpenCv.lvlib:GetAvailableTargets.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -64,82 +67,21 @@ description: "Converts  the image s pixel data type. "
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
-</TD>
-<TD>
-<B>Image Src Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
-</TD>
-<TD>
-<B>Image Dst Reference In</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
 <P><IMG SRC="/cenum.png" ALT="cenum"></P>
 </TD>
 <TD>
-<B>Image Type</B> <P>ImageFormat enum defines pixel data type: </P>
-<P>MonoU8 (8-bit unsigned ), </P>
-<P>MonoU16 (16-bit unsigned), </P>
-<P>MonoI16 (16-bit signed), </P>
-<P>MonoSGL (single-precision float), </P>
-<P>ColorU32 (8x4 unsigned integer, RGBA), </P>
-<P>ColorU64 (16x4 unsigned integer, RGBA).</P>
+<B>Backend</B> <P>DNN_BACKEND_DEFAULT</P>
+<P>DNN_BACKEND_HALIDE</P>
+<P>DNN_BACKEND_INFERENCE_ENGINE (OpenVino)</P>
+<P>DNN_BACKEND_OPENCV</P>
+<P>DNN_BACKEND_VKCOM</P>
+<P>DNN_BACKEND_CUDA</P>
+<P>DNN_BACKEND_WEBNN</P>
+<P>DNN_BACKEND_TIMVX</P>
+<P>DNN_BACKEND_CANN</P>
 </TD>
 </TR>
 </Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cu32.png" ALT="cu32"></P>
-</TD>
-<TD>
-<B>Method</B> <P>- Use Bit Depth (0): Casts based on the image's bit depth information. Only works for integer types.</P>
-<P>- Shift (1): Casts by right-shifting the pixel values by a specified &quot;Number of Shifts&quot;. Only works for integer types.</P>
-<P>- Use Lookup Table (2): Casts using a provided &quot;Lookup Table&quot;. Works for MonoU8, MonoU16, MonoSGL</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/ci32.png" ALT="ci32"></P>
-</TD>
-<TD>
-<B>Number of Shifts</B> <P>This specifies the number of bits to right-shift the pixel values during casting.</P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/c1dsgl.png" ALT="c1dsgl"></P>
-</TD>
-<TD>
-<B>Lookup Table</B> <P>Array where the index is the original value, and the values at that indexs are the new values.</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -190,12 +132,22 @@ description: "Converts  the image s pixel data type. "
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
+<P><IMG SRC="/i1denum.png" ALT="i1denum"></P>
 </TD>
 <TD>
-<B>Image Dst Reference Out</B> <P>An Image reference is a handle to the actual image data in memory. It's important to note that you are responsible for manually releasing (deallocating) the memory associated with this image reference when it's no longer needed to prevent memory leaks.</P>
-</TD>
+<B>Targets</B> </TD>
 </TR>
 </Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ienum.png" ALT="ienum"></P>
+</TD>
+<TD>
+<B>Target</B> </TD>
+</TR>
+</Table>
+</UL>
 </BODY>
 </HTML>
