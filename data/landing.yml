@@ -5,7 +5,7 @@ hero:
   template: hero
 
   title: "OpenLvVision"
-  subtitle: "OpenLvVision is an open-source library designed for image processing within the LabView environment."
+  subtitle: "An direct OpenCV API access natively in LabVIEW. Run AI neural networks and GPU accelerated computer vision, completely free and open source."
   
   backgroundImage:
     path: "images/templates/hero"
@@ -16,7 +16,7 @@ hero:
   image:
     path: "images"
     filename: "Logo.png" 
-    alt: "Logo"
+    alt: "OpenLvVision LabVIEW OpenCV AI CUDA Logo" 
     boxShadow: false 
     rounded: true 
 
@@ -26,37 +26,40 @@ hero:
     url: "docs/"
   cta2Button:
     icon: rebase_edit
-    btnText: "Repository"
+    btnText: "GitHub Repository" 
     url: "https://github.com/OpenLvVision/"
 
-  info: "**Open Source** BSD-3-Clause license"
+  info: "**Open Source** BSD-3-Clause"
   
 imageText:
   enable: true
   weight: 20
   template: image text
 
-  title: Open-Source power for your LabVIEW vision applications
-  subtitle: OpenLvVision offers an advanced, open-source image processing library meticulously engineered for native integration and high performance directly within your LabVIEW environment.
+  title: Built on Vision Common Resources
+  subtitle: OpenLvVision is engineered to work seamlessly with LabVIEW's native Vision Common Resources. Call OpenCV directly with zero memory-copy overhead and integrate effortlessly with other image libraries.
 
   image:
     path: "images/"
     filename: "OpenLvVision_Overview.png"
-    alt: "Overview"
+    alt: "LabVIEW Vision Common Resources OpenCV Integration" 
 
   imgOrder:
     desktop: 2
     mobile: 1
-
+    
   list:
-    - text: Graphical Progamming
-      icon: code_blocks
+    - text: Direct OpenCV Function Calls
+      icon: data_object
 
-    - text: Use LabVIEW community
-      icon: savings
+    - text: CUDA GPU Acceleration
+      icon: memory
 
-    - text: Performance
-      icon: speed
+    - text: OpenVINO Neural Networks
+      icon: psychology 
+
+    - text: Native Interoperability
+      icon: hub
 
 imageCompare:
   enable: false
