@@ -1,0 +1,302 @@
+---
+draft: false
+title: "WarpPolar"
+toc: true
+description: "Remaps an image to polar or semilog-polar coordinates space. "
+katex: true
+icon: circle
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:WarpPolar.vim"></A><H2>OpenLvVision_OpenCv.lvlib:WarpPolar.vim</H2>
+<P>Remaps an image to polar or semilog-polar coordinates space. </P>
+
+<p>The function transforms the source image using the following mapping:</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(\rho,\phi) = \texttt{src}(x,y)
+${{< /katex >}}</div>
+
+<p>where</p>
+
+<div>{{< katex >}}$
+\begin{aligned}
+\vec{I} &= (x - \texttt{center.x},\; y - \texttt{center.y}) \\
+\phi &= K_{\text{angle}} \cdot \texttt{angle}(\vec{I}) \\
+\rho &=
+\begin{cases}
+K_{\text{lin}} \cdot \texttt{magnitude}(\vec{I}), & \text{default} \\
+K_{\text{log}} \cdot \log_e(\texttt{magnitude}(\vec{I})), & \text{if semilog}
+\end{cases}
+\end{aligned}
+${{< /katex >}}</div>
+
+<p>and</p>
+
+<div>{{< katex >}}$
+\begin{aligned}
+K_{\text{angle}} &= \frac{\texttt{dsize.height}}{2\pi} \\
+K_{\text{lin}} &= \frac{\texttt{dsize.width}}{\texttt{maxRadius}} \\
+K_{\text{log}} &= \frac{\texttt{dsize.width}}{\log_e(\texttt{maxRadius})}
+\end{aligned}
+${{< /katex >}}</div>
+
+<p><strong>Linear vs semilog mapping</strong></p>
+
+<p>
+Polar mapping can be linear or semi-log. Add one of <code>WarpPolarMode</code> to the flags to specify the mapping mode.
+Linear mapping is the default.
+</p>
+
+<p>
+The semilog mapping emulates human “foveal” vision, providing high acuity near the center and lower acuity in the periphery.
+</p>
+
+<p><strong>Output image size rules:</strong></p>
+
+<ul>
+  <li><strong>If both values in <code>dsize ≤ 0</code> (default):</strong></li>
+</ul>
+
+<div>{{< katex >}}$
+\begin{aligned}
+\texttt{dsize.area} &\leftarrow \texttt{maxRadius}^2 \cdot \pi \\
+\texttt{dsize.width} &= \texttt{cvRound}(\texttt{maxRadius}) \\
+\texttt{dsize.height} &= \texttt{cvRound}(\texttt{maxRadius} \cdot \pi)
+\end{aligned}
+${{< /katex >}}</div>
+
+<ul>
+  <li><strong>If only <code>dsize.height ≤ 0</code>:</strong></li>
+</ul>
+
+<div>{{< katex >}}$
+\texttt{dsize.height} = \texttt{cvRound}(\texttt{dsize.width} \cdot \pi)
+${{< /katex >}}</div>
+
+<ul>
+  <li><strong>If both values in <code>dsize > 0</code>:</strong></li>
+</ul>
+
+<p>
+The destination image will have the specified size, and the bounding circle area is scaled accordingly.
+</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#ga49481ab24fdaa0ffa4d3e63d14c0d5e4" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/WarpPolarc.png" ALT="OpenLvVision_OpenCv.lvlib:WarpPolar.vim"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src</B> <P>	input image. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Dst</B> <P>output image that has the size dsize and the same type as src . </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>dsize</B> <P>	The destination image size (see description for valid options). </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>center</B> <P>The transformation center. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+</TD>
+<TD>
+<B>maxRadius</B> <P>The radius of the bounding circle to transform. It determines the inverse magnitude scale parameter too. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Flags</B> <P>	A combination of interpolation methods, InterpolationFlags + WarpPolarMode.</P>
+<P></P>
+<P>Add WARP_POLAR_LINEAR to select linear polar mapping (default)</P>
+<P></P>
+<P>Add WARP_POLAR_LOG to select semilog polar mapping</P>
+<P></P>
+<P>Add WARP_INVERSE_MAP for reverse mapping. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Dst</B> <P>	output image that has the size dsize and the same type as src . </P>
+</TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

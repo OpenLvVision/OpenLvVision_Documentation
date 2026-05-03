@@ -1,0 +1,236 @@
+---
+draft: false
+title: "Remap"
+toc: true
+description: "Applies a generic geometrical transformation to an image. "
+katex: true
+icon: flip
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:Remap.vim"></A><H2>OpenLvVision_OpenCv.lvlib:Remap.vim</H2>
+<P>Applies a generic geometrical transformation to an image. </P>
+<P><IMG SRC="/Remapc.png" ALT="OpenLvVision_OpenCv.lvlib:Remap.vim"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src</B> <P>	Source image. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Dst</B> <P>Destination image. It has the same size as map1 and the same type as src . </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>map1</B> <P>The first map of either (x,y) points or just x values having the type CV_16SC2 , CV_32FC1, or CV_32FC2. See convertMaps for details on converting a floating point representation to fixed-point for speed. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>BorderTypes</B> <P>Pixel extrapolation method (see BorderTypes). When borderMode=BORDER_TRANSPARENT, it means that the pixels in the destination image that corresponds to the &quot;outliers&quot; in the source image are not modified by the function. </P>
+<P></P>
+<P> BORDER_CONSTANT    = 0, !&lt; `iiiiii|abcdefgh|iiiiiii`  with some specified `i`</P>
+<P> BORDER_REPLICATE   = 1, `aaaaaa|abcdefgh|hhhhhhh`</P>
+<P> BORDER_REFLECT     = 2, `fedcba|abcdefgh|hgfedcb`</P>
+<P> BORDER_WRAP        = 3, `cdefgh|abcdefgh|abcdefg`</P>
+<P> BORDER_REFLECT_101 = 4, `gfedcb|abcdefgh|gfedcba`</P>
+<P> BORDER_TRANSPARENT = 5, `uvwxyz|abcdefgh|ijklmno` - Treats outliers as transparent.</P>
+<P> BORDER_ISOLATED    = 16  Interpolation restricted within the ROI boundaries.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/c1ddbl.png" ALT="c1ddbl"></P>
+</TD>
+<TD>
+<B>BorderValue</B> <P>Value used in case of a constant border. By default, it is 0. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+</TD>
+<TD>
+<B>Numeric</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Interpolation</B> <P>Interpolation method (see InterpolationFlags). The methods INTER_AREA INTER_LINEAR_EXACT and INTER_NEAREST_EXACT are not supported by this function. The extra flag WARP_RELATIVE_MAP can be ORed to the interpolation method (e.g. INTER_LINEAR | WARP_RELATIVE_MAP) </P>
+<P></P>
+<P>INTER_NEAREST: 	nearest neighbor interpolation </P>
+<P></P>
+<P>INTER_LINEAR: bilinear interpolation</P>
+<P></P>
+<P>INTER_CUBIC: 	bicubic interpolation </P>
+<P></P>
+<P>INTER_AREA: resampling using pixel area relation. It may be a preferred method for image decimation, as it gives moire'-free results. But when the image is zoomed, it is similar to the </P>
+<P></P>
+<P>INTER_NEAREST method. </P>
+<P></P>
+<P>INTER_LANCZOS4: Lanczos interpolation over 8x8 neighborhood </P>
+<P></P>
+<P>INTER_LINEAR_EXACT: Bit exact bilinear interpolation </P>
+<P></P>
+<P>INTER_NEAREST_EXACT: Bit exact nearest neighbor interpolation. This will produce same results as the nearest neighbor method in PIL, scikit-image or Matlab. </P>
+<P></P>
+<P>INTER_MAX: mask for interpolation codes </P>
+<P></P>
+<P>WARP_FILL_OUTLIERS: flag, fills all of the destination image pixels. If some of them correspond to outliers in the source image, they are set to zero</P>
+<P></P>
+<P>WARP_INVERSE_MAP: flag, inverse transformation</P>
+<P></P>
+<P>WARP_RELATIVE_MAP</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>map2</B> <P>The second map of y values having the type CV_16UC1, CV_32FC1, or none (empty map if map1 is (x,y) points), respectively. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Dst</B> <P>Destination image. It has the same size as map1 and the same type as src . </P>
+</TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

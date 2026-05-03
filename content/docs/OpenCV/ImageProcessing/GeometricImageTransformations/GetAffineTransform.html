@@ -1,0 +1,241 @@
+---
+draft: false
+title: "GetAffineTransform"
+toc: true
+description: "Calculates an affine transform from three pairs of the corresponding points. "
+katex: true
+icon: flip
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:GetAffineTransform.vi"></A><H2>OpenLvVision_OpenCv.lvlib:GetAffineTransform.vi</H2>
+<P>Calculates an affine transform from three pairs of the corresponding points. </P>
+
+<p>The function calculates a <code>2 × 3</code> affine transformation matrix such that:</p>
+
+<div>{{< katex >}}$
+\begin{bmatrix}
+x'_i \\
+y'_i
+\end{bmatrix}
+=
+\texttt{map\_matrix}
+\cdot
+\begin{bmatrix}
+x_i \\
+y_i \\
+1
+\end{bmatrix}
+${{< /katex >}}</div>
+
+<p>where</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(i) = (x'_i, y'_i), \quad
+\texttt{src}(i) = (x_i, y_i), \quad i = 0,1,2
+${{< /katex >}}</div>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#ga8f6d378f9f8eebb5cb55cd3ae295a999" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/GetAffineTransformc.png" ALT="OpenLvVision_OpenCv.lvlib:GetAffineTransform.vi"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/c1dnclst.png" ALT="c1dnclst"></P>
+</TD>
+<TD>
+<B>Src</B> <P>Coordinates of triangle vertices in the source image. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>Point</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/c1dnclst.png" ALT="c1dnclst"></P>
+</TD>
+<TD>
+<B>Dst</B> <P>Coordinates of the corresponding triangle vertices in the destination image.</P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>Point</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/i2ddbl.png" ALT="i2ddbl"></P>
+</TD>
+<TD>
+<B>Result</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/idbl.png" ALT="idbl"></P>
+</TD>
+<TD>
+<B>Numeric</B> </TD>
+</TR>
+</Table>
+</UL>
+</BODY>
+</HTML>

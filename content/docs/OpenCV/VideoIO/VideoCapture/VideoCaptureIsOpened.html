@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Forward"
+title: "IsOpened"
 toc: true
-description: "Runs forward pass to compute output of layer with name outputName. 
-By default runs forward pass for the whole network. "
+description: "Returns true if video capturing has been initialized already. "
 katex: true
-icon: play_arrow
+icon: select_check_box
 ---
 <HTML>
 <HEAD>
@@ -13,12 +12,14 @@ icon: play_arrow
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></A><H2>OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi</H2>
-<P>Runs forward pass to compute output of layer with name outputName. </P>
-<p>By default runs forward pass for the whole network.</p> 
+<A NAME="OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture IsOpened.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture IsOpened.vi</H2>
+<P>Returns true if video capturing has been initialized already. </P>
 
-<p><a href="https://docs.opencv.org/4.13.0/db/d30/classcv_1_1dnn_1_1Net.html#a98ed94cb6ef7063d3697259566da310b" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
-<P><IMG SRC="/NETForwardc.png" ALT="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></P>
+<p>If the previous call to VideoCapture constructor or VideoCapture::open() succeeded, the method returns true.</p>
+ 
+
+<p><a href="https://docs.opencv.org/4.13.0/d8/dfe/classcv_1_1VideoCapture.html#a9d2ca36789e7fcfe7a7be3b328038585" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/VideoCaptureIsOpenedc.png" ALT="OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture IsOpened.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -72,43 +73,12 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoCapturelvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoCapturelvclass"></P>
 </TD>
 <TD>
-<B>NET in</B> </TD>
+<B>VideoCapture in</B> </TD>
 </TR>
 </Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cstr.png" ALT="cstr"></P>
-</TD>
-<TD>
-<B>ouputName</B> <P>name for layer which output is needed to get </P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/c4dsgl.png" ALT="c4dsgl"></P>
-</TD>
-<TD>
-<B>Blob in</B> <P>Wire a pre-allocated array to this input to prevent memory reallocation and save cycle time. If left unwired, the array size will be set automatically, but it will incur a performance penalty due to memory allocation on every call.</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -162,31 +132,21 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_VideoCapturelvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_VideoCapturelvclass"></P>
 </TD>
 <TD>
-<B>NET out</B> </TD>
+<B>VideoCapture out</B> </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/i4dsgl.png" ALT="i4dsgl"></P>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
 </TD>
 <TD>
-<B>Blob out</B> </TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/isgl.png" ALT="isgl"></P>
+<B>Open</B> <P></P>
 </TD>
-<TD>
-<B>Numeric</B> </TD>
 </TR>
 </Table>
-</UL>
 </BODY>
 </HTML>

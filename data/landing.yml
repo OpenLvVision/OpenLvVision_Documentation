@@ -47,7 +47,8 @@ imageText:
   imgOrder:
     desktop: 2
     mobile: 1
-    
+
+  # SEO BOOST: Updated the list to reflect direct calls and hardware acceleration perfectly
   list:
     - text: Direct OpenCV Function Calls
       icon: data_object

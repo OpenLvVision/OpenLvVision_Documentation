@@ -1,0 +1,225 @@
+---
+draft: false
+title: "GetRectSubPix"
+toc: true
+description: "Retrieves a pixel rectangle from an image with sub-pixel accuracy. "
+katex: true
+icon: picture_in_picture_mobile
+---
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="">
+<META NAME="GENERATOR" CONTENT="G Development Environment">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="OpenLvVision_OpenCv.lvlib:GetRectSubPix.vim"></A><H2>OpenLvVision_OpenCv.lvlib:GetRectSubPix.vim</H2>
+<P>Retrieves a pixel rectangle from an image with sub-pixel accuracy. </P>
+
+<p>The function getRectSubPix extracts pixels from src:</p>
+
+<div>{{< katex >}}$
+\texttt{patch}(x, y) =
+\texttt{src}\!\left(
+x + \texttt{center.x} - (\texttt{dst.cols}-1)\cdot 0.5,\;
+y + \texttt{center.y} - (\texttt{dst.rows}-1)\cdot 0.5
+\right)
+${{< /katex >}}</div>
+
+<p>
+Pixel values at non-integer coordinates are retrieved using bilinear interpolation.  
+Each channel of a multi-channel image is processed independently.
+</p>
+
+<p>
+The input image must be either single-channel or three-channel.  
+The center of the rectangle must lie inside the image, although parts of the rectangle may extend outside.
+</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#ga77576d06075c1a4b6ba1a608850cd614" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/GetRectSubPixc.png" ALT="OpenLvVision_OpenCv.lvlib:GetRectSubPix.vim"></P>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cerrcodeclst.png" ALT="cerrcodeclst"></P>
+</TD>
+<TD>
+<B>error in</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Src</B> <P>Source image. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Patch</B> <P>Extracted patch that has the size patchSize and the same number of channels as src . </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>PatchSize</B> <P>	Extracted patch that has the size patchSize and the same number of channels as src . </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>center</B> <P>Floating point coordinates of the center of the extracted rectangle within the source image. The center must be inside the image. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
+</TD>
+<TD>
+<B>error out</B> <P><B>error in</B> can accept error information wired from VIs previously called. Use this information to decide if any functionality should be bypassed in the event of errors from other VIs.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error. </P>
+</TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
+</TD>
+<TD>
+<B>status</B> <P><B>status</B> is TRUE (X) if an error occurred or FALSE (checkmark) to indicate a warning or that no error occurred.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ii32.png" ALT="ii32"></P>
+</TD>
+<TD>
+<B>code</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/istr.png" ALT="istr"></P>
+</TD>
+<TD>
+<B>source</B> <P><B>source</B> describes the origin of the error or warning.</P>
+<P></P>
+<P>Right-click the <B>error in</B> control on the front panel and select <B>Explain Error</B> or <B>Explain Warning</B> from the shortcut menu for more information about the error.</P>
+</TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Anythinglvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Anythinglvclass"></P>
+</TD>
+<TD>
+<B>Patch</B> <P>	output image that has the size dsize and the same type as src . </P>
+</TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

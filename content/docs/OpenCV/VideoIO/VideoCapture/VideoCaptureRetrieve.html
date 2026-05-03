@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Forward"
+title: "Retrieve"
 toc: true
-description: "Runs forward pass to compute output of layer with name outputName. 
-By default runs forward pass for the whole network. "
+description: "Decodes and returns the grabbed video frame. "
 katex: true
-icon: play_arrow
+icon: replace_image
 ---
 <HTML>
 <HEAD>
@@ -13,12 +12,13 @@ icon: play_arrow
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></A><H2>OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi</H2>
-<P>Runs forward pass to compute output of layer with name outputName. </P>
-<p>By default runs forward pass for the whole network.</p> 
+<A NAME="OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture Retrieve.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture Retrieve.vi</H2>
+<P>Decodes and returns the grabbed video frame. </P>
 
-<p><a href="https://docs.opencv.org/4.13.0/db/d30/classcv_1_1dnn_1_1Net.html#a98ed94cb6ef7063d3697259566da310b" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
-<P><IMG SRC="/NETForwardc.png" ALT="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></P>
+<p>The method decodes and returns the just grabbed frame. If no frames has been grabbed (camera has been disconnected, or there are no more frames in video file), the method returns false and the function returns an empty image (with cv::Mat, test it with Mat::empty()).</p> 
+
+<p><a href="https://docs.opencv.org/4.13.0/d8/dfe/classcv_1_1VideoCapture.html#a9ac7f4b1cdfe624663478568486e6712" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/VideoCaptureRetrievec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture Retrieve.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -72,43 +72,32 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoCapturelvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoCapturelvclass"></P>
 </TD>
 <TD>
-<B>NET in</B> </TD>
+<B>VideoCapture in</B> </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cstr.png" ALT="cstr"></P>
+<P><IMG SRC="/cudtagrefflat.png" ALT="cudtagrefflat"></P>
 </TD>
 <TD>
-<B>ouputName</B> <P>name for layer which output is needed to get </P>
+<B>Image</B> <P>image	the video frame is returned here. If no frames has been grabbed the image will be empty. </P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/c4dsgl.png" ALT="c4dsgl"></P>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
 </TD>
 <TD>
-<B>Blob in</B> <P>Wire a pre-allocated array to this input to prevent memory reallocation and save cycle time. If left unwired, the array size will be set automatically, but it will incur a performance penalty due to memory allocation on every call.</P>
+<B>flag</B> <P>	it could be a frame index or a driver specific flag </P>
 </TD>
 </TR>
 </Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -162,31 +151,31 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_VideoCapturelvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_VideoCapturelvclass"></P>
 </TD>
 <TD>
-<B>NET out</B> </TD>
+<B>VideoCapture out</B> </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/i4dsgl.png" ALT="i4dsgl"></P>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
 </TD>
 <TD>
-<B>Blob out</B> </TD>
+<B>Success</B> <P></P>
+</TD>
 </TR>
 </Table>
-<UL>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/isgl.png" ALT="isgl"></P>
+<P><IMG SRC="/iudtagrefflat.png" ALT="iudtagrefflat"></P>
 </TD>
 <TD>
-<B>Numeric</B> </TD>
+<B>Image out</B> <P>image	the video frame is returned here. If no frames has been grabbed the image will be empty. </P>
+</TD>
 </TR>
 </Table>
-</UL>
 </BODY>
 </HTML>

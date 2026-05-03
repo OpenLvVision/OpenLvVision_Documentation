@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Forward"
+title: "Grab"
 toc: true
-description: "Runs forward pass to compute output of layer with name outputName. 
-By default runs forward pass for the whole network. "
+description: "Grabs the next frame from video file or capturing device. "
 katex: true
-icon: play_arrow
+icon: animated_images
 ---
 <HTML>
 <HEAD>
@@ -13,12 +12,18 @@ icon: play_arrow
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></A><H2>OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi</H2>
-<P>Runs forward pass to compute output of layer with name outputName. </P>
-<p>By default runs forward pass for the whole network.</p> 
+<A NAME="OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture Grab.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture Grab.vi</H2>
+<P>Grabs the next frame from video file or capturing device. </P>
 
-<p><a href="https://docs.opencv.org/4.13.0/db/d30/classcv_1_1dnn_1_1Net.html#a98ed94cb6ef7063d3697259566da310b" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
-<P><IMG SRC="/NETForwardc.png" ALT="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></P>
+<p>The method/function grabs the next frame from video file or camera and returns true (non-zero) in the case of success.</p>
+
+<p>The primary use of the function is in multi-camera environments, especially when the cameras do not have hardware synchronization. That is, you call VideoCapture::grab() for each camera and after that call the slower method VideoCapture::retrieve() to decode and get frame from each camera. This way the overhead on demosaicing or motion jpeg decompression etc. is eliminated and the retrieved frames from different cameras will be closer in time.</p>
+
+<p>Also, when a connected camera is multi-head (for example, a stereo camera or a Kinect device), the correct way of retrieving data from it is to call 
+VideoCapture::grab() first and then call VideoCapture::retrieve() one or more times with different values of the channel parameter.</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/d8/dfe/classcv_1_1VideoCapture.html#ae38c2a053d39d6b20c9c649e08ff0146" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/VideoCaptureGrabc.png" ALT="OpenLvVision_OpenCv.lvlib:VideoCapture.lvclass:VideoCapture Grab.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -72,43 +77,12 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoCapturelvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoCapturelvclass"></P>
 </TD>
 <TD>
-<B>NET in</B> </TD>
+<B>VideoCapture in</B> </TD>
 </TR>
 </Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/cstr.png" ALT="cstr"></P>
-</TD>
-<TD>
-<B>ouputName</B> <P>name for layer which output is needed to get </P>
-</TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/c4dsgl.png" ALT="c4dsgl"></P>
-</TD>
-<TD>
-<B>Blob in</B> <P>Wire a pre-allocated array to this input to prevent memory reallocation and save cycle time. If left unwired, the array size will be set automatically, but it will incur a performance penalty due to memory allocation on every call.</P>
-</TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
-</TD>
-<TD>
-<B>Numeric</B> </TD>
-</TR>
-</Table>
-</UL>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -162,31 +136,21 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_VideoCapturelvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_VideoCapturelvclass"></P>
 </TD>
 <TD>
-<B>NET out</B> </TD>
+<B>VideoCapture out</B> </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/i4dsgl.png" ALT="i4dsgl"></P>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
 </TD>
 <TD>
-<B>Blob out</B> </TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/isgl.png" ALT="isgl"></P>
+<B>Success</B> <P></P>
 </TD>
-<TD>
-<B>Numeric</B> </TD>
 </TR>
 </Table>
-</UL>
 </BODY>
 </HTML>

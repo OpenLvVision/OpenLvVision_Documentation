@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Forward"
+title: "Open_Default"
 toc: true
-description: "Runs forward pass to compute output of layer with name outputName. 
-By default runs forward pass for the whole network. "
+description: "Initializes or reinitializes video writer. "
 katex: true
-icon: play_arrow
+icon: file_open
 ---
 <HTML>
 <HEAD>
@@ -13,12 +12,12 @@ icon: play_arrow
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></A><H2>OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi</H2>
-<P>Runs forward pass to compute output of layer with name outputName. </P>
-<p>By default runs forward pass for the whole network.</p> 
+<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Open_Default.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Open_Default.vi</H2>
+<P>Initializes or reinitializes video writer. </P>
 
-<p><a href="https://docs.opencv.org/4.13.0/db/d30/classcv_1_1dnn_1_1Net.html#a98ed94cb6ef7063d3697259566da310b" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
-<P><IMG SRC="/NETForwardc.png" ALT="OpenLvVision_OpenCv.lvlib:NET.lvclass:NET Forward.vi"></P>
+
+<p><a href="https://docs.opencv.org/4.13.0/dd/d9e/classcv_1_1VideoWriter.html#a808ee7d60c58af071035a19e396bfa91" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/VideoWriterOpen_Defaultc.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Open_Default.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -72,10 +71,10 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
 </TD>
 <TD>
-<B>NET in</B> </TD>
+<B>VideoWriter in</B> </TD>
 </TR>
 </Table>
 <Table>
@@ -84,17 +83,37 @@ icon: play_arrow
 <P><IMG SRC="/cstr.png" ALT="cstr"></P>
 </TD>
 <TD>
-<B>ouputName</B> <P>name for layer which output is needed to get </P>
+<B>Filename</B> <P>Name of the output video file. </P>
 </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/c4dsgl.png" ALT="c4dsgl"></P>
+<P><IMG SRC="/cstr.png" ALT="cstr"></P>
 </TD>
 <TD>
-<B>Blob in</B> <P>Wire a pre-allocated array to this input to prevent memory reallocation and save cycle time. If left unwired, the array size will be set automatically, but it will incur a performance penalty due to memory allocation on every call.</P>
+<B>Fourcc</B> <P>4-character code of codec used to compress the frames. For example, VideoWriter::fourcc('P','I','M','1') is a MPEG-1 codec, VideoWriter::fourcc('M','J','P','G') is a motion-jpeg codec etc.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cbool.png" ALT="cbool"></P>
+</TD>
+<TD>
+<B>IsColor</B> <P>If it is not zero, the encoder will expect and encode color frames, otherwise it will work with grayscale frames.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cnclst.png" ALT="cnclst"></P>
+</TD>
+<TD>
+<B>FrameSize</B> <P>Size of the video frames. </P>
 </TD>
 </TR>
 </Table>
@@ -102,13 +121,41 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/csgl.png" ALT="csgl"></P>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
 </TD>
 <TD>
-<B>Numeric</B> </TD>
+<B>X</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Y</B> </TD>
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cdbl.png" ALT="cdbl"></P>
+</TD>
+<TD>
+<B>Fps</B> <P>Framerate of the created video stream. </P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>VideoCaptureAPIs</B> </TD>
+</TR>
+</Table>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -162,31 +209,21 @@ icon: play_arrow
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_NETlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_NETlvclass"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
 </TD>
 <TD>
-<B>NET out</B> </TD>
+<B>VideoWriter out</B> </TD>
 </TR>
 </Table>
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/i4dsgl.png" ALT="i4dsgl"></P>
+<P><IMG SRC="/ibool.png" ALT="ibool"></P>
 </TD>
 <TD>
-<B>Blob out</B> </TD>
-</TR>
-</Table>
-<UL>
-<Table>
-<TR valign=TOP>
-<TD>
-<P><IMG SRC="/isgl.png" ALT="isgl"></P>
+<B>Success</B> <P>Returns true if video writer has been successfully initialized. </P>
 </TD>
-<TD>
-<B>Numeric</B> </TD>
 </TR>
 </Table>
-</UL>
 </BODY>
 </HTML>
