@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Dispose"
+title: "WaitForCompletion"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Blocks the calling  CPU until all operations currently queued in this specific stream have finished executing on the GPU."
 katex: true
-icon: delete
+icon: hourglass_pause
 ---
 <HTML>
 <HEAD>
@@ -13,10 +12,11 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream WaitForCompletion.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream WaitForCompletion.vi</H2>
+<P>Blocks the calling  CPU until all operations currently queued in this specific stream have finished executing on the GPU.</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d9/df3/classcv_1_1cuda_1_1Stream.html#a0e1d939503e8faad741ab584b720bca6" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/StreamWaitForCompletionc.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream WaitForCompletion.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +70,10 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>Stream in</B> </TD>
 </TR>
 </Table>
 <Table>
@@ -126,5 +126,14 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass"></P>
+</TD>
+<TD>
+<B>Stream out</B> </TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

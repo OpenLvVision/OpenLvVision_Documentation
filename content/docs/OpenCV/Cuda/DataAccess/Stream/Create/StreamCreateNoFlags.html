@@ -1,11 +1,11 @@
 ---
 draft: false
-title: "Dispose"
+title: "CreateNoFlags"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Object by Reference!
+Creates and initializes a new CUDA Stream. 
+A stream represents a dedicated, asynchronous execution queue."
 katex: true
-icon: delete
 ---
 <HTML>
 <HEAD>
@@ -13,10 +13,13 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream CreateNoFlags.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream CreateNoFlags.vi</H2>
+<P>Object by Reference!</P>
+<P>Creates and initializes a new CUDA Stream. </P>
+<P>A stream represents a dedicated, asynchronous execution queue.</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d9/df3/classcv_1_1cuda_1_1Stream.html#aa6434e2f5f29bd81406732b39951c246" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/StreamCreateNoFlagsc.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream CreateNoFlags.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,15 +73,6 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
-</TD>
-<TD>
-<B>VideoWriter in</B> </TD>
-</TR>
-</Table>
-<Table>
-<TR valign=TOP>
-<TD>
 <P><IMG SRC="/ierrcodeclst.png" ALT="ierrcodeclst"></P>
 </TD>
 <TD>
@@ -126,5 +120,14 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass"></P>
+</TD>
+<TD>
+<B>Stream out</B> </TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

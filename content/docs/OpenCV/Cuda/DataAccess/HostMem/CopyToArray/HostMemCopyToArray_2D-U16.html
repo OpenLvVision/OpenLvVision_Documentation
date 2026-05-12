@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Dispose"
+title: "CopyToArray_2D-U16"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Copies the hostmat data into an array."
 katex: true
-icon: delete
+icon: download
 ---
 <HTML>
 <HEAD>
@@ -13,10 +12,9 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem CopyToArray_2D_U16.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem CopyToArray_2D-U16.vi</H2>
+<P>Copies the hostmat data into an array.</P>
+<P><IMG SRC="/HostMemCopyToArray_2D-U16c.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem CopyToArray_2D-U16.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +68,10 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>HostMem in</B> </TD>
 </TR>
 </Table>
 <Table>
@@ -123,6 +121,35 @@ icon: delete
 <P></P>
 <P>The pop-up option <B>Explain Error</B> (or Explain Warning) gives more information about the error displayed.</P>
 </TD>
+</TR>
+</Table>
+</UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+</TD>
+<TD>
+<B>HostMem out</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/i2du16.png" ALT="i2du16"></P>
+</TD>
+<TD>
+<B>Array</B> </TD>
+</TR>
+</Table>
+<UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iu16.png" ALT="iu16"></P>
+</TD>
+<TD>
+<B>Numeric</B> </TD>
 </TR>
 </Table>
 </UL>

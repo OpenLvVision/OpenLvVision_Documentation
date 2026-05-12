@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Dispose"
+title: "Clone"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Returns deep copy of the matrix, i.e. the data is copied "
 katex: true
-icon: delete
+icon: folder_match
 ---
 <HTML>
 <HEAD>
@@ -13,10 +12,11 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Clone.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Clone.vi</H2>
+<P>Returns deep copy of the matrix, i.e. the data is copied </P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d0/d44/classcv_1_1cuda_1_1HostMem.html#a29b76f344d85d77b4c51478cfebbbd28" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/HostMemClonec.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Clone.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +70,11 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>HostMem in</B> <P>Reference to the original HostMem object.</P>
+</TD>
 </TR>
 </Table>
 <Table>
@@ -126,5 +127,25 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+</TD>
+<TD>
+<B>HostMem out</B> <P>Reference to the original HostMem object.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+</TD>
+<TD>
+<B>Clone out </B> <P>Reference to the destination HostMem object that will receive the copy.</P>
+</TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

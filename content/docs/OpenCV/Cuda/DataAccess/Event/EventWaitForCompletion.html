@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Dispose"
+title: "WaitForCompletion"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Blocks the calling CPU thread until the event has triggered. "
 katex: true
-icon: delete
+icon: hourglass_pause
 ---
 <HTML>
 <HEAD>
@@ -13,10 +12,9 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Event.lvclass:Event WaitForCompletion.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Event.lvclass:Event WaitForCompletion.vi</H2>
+<P>Blocks the calling CPU thread until the event has triggered. </P>
+<P><IMG SRC="/EventWaitForCompletionc.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Event.lvclass:Event WaitForCompletion.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +68,11 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>Event in</B> <P>The reference to the CUDA Event object to wait for.</P>
+</TD>
 </TR>
 </Table>
 <Table>
@@ -126,5 +125,15 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass"></P>
+</TD>
+<TD>
+<B>Event out</B> <P>The reference to the CUDA Event object to wait for.</P>
+</TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

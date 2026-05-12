@@ -1,11 +1,11 @@
 ---
 draft: false
-title: "Dispose"
+title: "Create"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Object by Reference!
+Creates and initializes a CUDA Event object. An event acts as a hardware-level  checkpoint  or  sticky note  that can be dropped into a GPU stream to synchronize operations between multiple streams or between the GPU and the CPU."
 katex: true
-icon: delete
+icon: add_box
 ---
 <HTML>
 <HEAD>
@@ -13,10 +13,12 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Event.lvclass:Event Create.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Event.lvclass:Event Create.vi</H2>
+<P>Object by Reference!</P>
+<P>Creates and initializes a CUDA Event object. An event acts as a hardware-level &quot;checkpoint&quot; or &quot;sticky note&quot; that can be dropped into a GPU stream to synchronize operations between multiple streams or between the GPU and the CPU.</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d5/d38/classcv_1_1cuda_1_1Event.html#a2ac97fc8935140b6e2ce870fe7ee8891" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/EventCreatec.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Event.lvclass:Event Create.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +72,14 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>Event CreateFlags</B> <P>DEFAULT: Default event flag </P>
+<P>BLOCKING_SYNC: Event uses blocking synchronization </P>
+<P>DISABLE_TIMING: Event will not record timing data </P>
+<P>INTERPROCESS : Event is suitable for interprocess use. DisableTiming must be set </P>
+</TD>
 </TR>
 </Table>
 <Table>
@@ -126,5 +132,15 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass"></P>
+</TD>
+<TD>
+<B>Event out</B> <P>The reference/pointer to the newly created C++ cv::cuda:Event object.</P>
+</TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

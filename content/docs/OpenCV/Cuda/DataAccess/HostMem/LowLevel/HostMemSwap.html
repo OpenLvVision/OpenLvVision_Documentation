@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Dispose"
+title: "Swap"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Swaps with other smart pointer"
 katex: true
-icon: delete
+icon: sync_alt
 ---
 <HTML>
 <HEAD>
@@ -13,10 +12,11 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Swap.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Swap.vi</H2>
+<P>Swaps with other smart pointer</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d0/d44/classcv_1_1cuda_1_1HostMem.html#a6eabc73d59936b87292125e17415b053" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/HostMemSwapc.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Swap.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +70,21 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>A in</B> <P>Reference to the first HostMem object.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+</TD>
+<TD>
+<B>B in</B> <P>Reference to the second HostMem object.</P>
+</TD>
 </TR>
 </Table>
 <Table>
@@ -126,5 +137,25 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+</TD>
+<TD>
+<B>A out</B> <P>Reference to the first HostMem object.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+</TD>
+<TD>
+<B>B out</B> <P>Reference to the second HostMem object.</P>
+</TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

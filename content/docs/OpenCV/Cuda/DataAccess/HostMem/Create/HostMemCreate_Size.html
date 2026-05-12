@@ -1,11 +1,11 @@
 ---
 draft: false
-title: "Dispose"
+title: "Create_Size"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Object by Reference!
+Creates from host memory with the given size."
 katex: true
-icon: delete
+icon: add_box
 ---
 <HTML>
 <HEAD>
@@ -13,10 +13,12 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Create_Size.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Create_Size.vi</H2>
+<P>Object by Reference!</P>
+<P>Creates from host memory with the given size.</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d0/d44/classcv_1_1cuda_1_1HostMem.html#abddf8d1a9db3b9369841e2bf40e4b210" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/HostMemCreate_Sizec.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem Create_Size.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +72,44 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/cenum.png" ALT="cenum"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>AllocType</B> <P>PAGE_LOCKED: Allocates pinned memory, which is essential for accelerating data transfer between CPU and GPU.</P>
+<P></P>
+<P>SHARED: Specifies zero-copy memory, which enables mapping host memory to the GPU address space, reducing copy overhead, especially on integrated GPUs.</P>
+<P></P>
+<P>WRITE_COMBINED: Allocates write-combined memory, which is not cached by the CPU, making it efficient for write-only data destined for the GPU.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Rows</B> <P>The height of the matrix or image. This represents the number of vertical pixels (or data elements) in the memory block.</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/ci32.png" ALT="ci32"></P>
+</TD>
+<TD>
+<B>Cols</B> </TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cenum.png" ALT="cenum"></P>
+</TD>
+<TD>
+<B>cvType</B> <P>The OpenCV data type and channel configuration you want to allocate</P>
+</TD>
 </TR>
 </Table>
 <Table>
@@ -126,5 +162,14 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+</TD>
+<TD>
+<B>HostMem</B> </TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

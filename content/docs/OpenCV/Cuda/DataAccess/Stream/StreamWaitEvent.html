@@ -1,11 +1,10 @@
 ---
 draft: false
-title: "Dispose"
+title: "WaitEvent"
 toc: true
-description: "Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.
-You must call this VI when you are finished using the object reference to prevent memory leaks!"
+description: "Instructs this GPU Stream to pause its execution until a specific CUDA Event triggers."
 katex: true
-icon: delete
+icon: hourglass_pause
 ---
 <HTML>
 <HEAD>
@@ -13,10 +12,11 @@ icon: delete
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></A><H2>OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi</H2>
-<P>Closes the reference and triggers cleanup of the associated C++ object, releasing system resources.</P>
-<P>You must call this VI when you are finished using the object reference to prevent memory leaks!</P>
-<P><IMG SRC="/VideoWriterDisposec.png" ALT="OpenLvVision_OpenCv.lvlib:VideoWriter.lvclass:VideoWriter Dispose.vi"></P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream WaitEvent.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream WaitEvent.vi</H2>
+<P>Instructs this GPU Stream to pause its execution until a specific CUDA Event triggers.</P>
+
+<p><a href="https://docs.opencv.org/4.13.0/d9/df3/classcv_1_1cuda_1_1Stream.html#a9e8a713f312a15ba00702d6f46867987" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 
+<P><IMG SRC="/StreamWaitEventc.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:Stream.lvclass:Stream WaitEvent.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -70,10 +70,21 @@ icon: delete
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_VideoWriterlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass"></P>
 </TD>
 <TD>
-<B>VideoWriter in</B> </TD>
+<B>Stream in</B> <P>The stream that needs to pause</P>
+</TD>
+</TR>
+</Table>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Eventlvclass"></P>
+</TD>
+<TD>
+<B>Event</B> <P>The event that the stream is waiting to occ</P>
+</TD>
 </TR>
 </Table>
 <Table>
@@ -126,5 +137,15 @@ icon: delete
 </TR>
 </Table>
 </UL>
+<Table>
+<TR valign=TOP>
+<TD>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_Streamlvclass"></P>
+</TD>
+<TD>
+<B>Stream out</B> <P>The stream that needs to pause</P>
+</TD>
+</TR>
+</Table>
 </BODY>
 </HTML>

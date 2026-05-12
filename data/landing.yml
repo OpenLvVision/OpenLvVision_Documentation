@@ -5,6 +5,7 @@ hero:
   template: hero
 
   title: "OpenLvVision"
+  # SEO BOOST: Added "Direct API" and re-emphasized the AI/Hardware aspect.
   subtitle: "An direct OpenCV API access natively in LabVIEW. Run AI neural networks and GPU accelerated computer vision, completely free and open source."
   
   backgroundImage:
@@ -36,6 +37,7 @@ imageText:
   weight: 20
   template: image text
 
+  # SEO & TRUST BOOST: Calling out Vision Common Resources and Interoperability
   title: Built on Vision Common Resources
   subtitle: OpenLvVision is engineered to work seamlessly with LabVIEW's native Vision Common Resources. Call OpenCV directly with zero memory-copy overhead and integrate effortlessly with other image libraries.
 
