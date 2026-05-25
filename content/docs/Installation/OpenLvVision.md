@@ -97,7 +97,7 @@ A free, widely used, open-source library for computer vision and image processin
 {{< alert context="warning" text= "Requires an Internet connection to GitHub and AWS during installation! If this is not possible, please follow the offline installation guide below."/>}}
 
 #### Download Links
-- [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_OpenCv/releases)  
+- [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_with_OpenCv/releases)  
 - [VIPM Package](https://www.vipm.io/package/openlvvision_lib_openlvvision_opencv/) 
 
 #### Offline Installation
@@ -105,8 +105,8 @@ A free, widely used, open-source library for computer vision and image processin
 If you do not have internet access on the target machine, you can install the module manually. 
 
 1. **Download the required files:**
-   - **OpenCV:** [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_OpenCv/releases)
-   - **Dependencies:** [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_OpenCv_Dependencies/releases/)
+   - **OpenCV:** [GitHub Releases](https://https://github.com/OpenLvVision/OpenLvVision_with_OpenCv/releases)
+   - **Dependencies:** [GitHub Releases](https://github.com/OpenLvVision/OpenLvVision_for_OpenCv_Dependencies/releases)
    - The `.vip` file (the package itself)
    - The associated `.zip` files:
      - Use the `x64` zips for **LabVIEW 64-bit**

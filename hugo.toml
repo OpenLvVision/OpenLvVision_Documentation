@@ -15,6 +15,8 @@ title = "OpenLvVision"
 	title = "OpenLvVision"
 	sidebarIcons = true
 	titleIcon = true
+	prism = true
+
 
 [params.social]
 	github = "OpenLvVision"

@@ -2,7 +2,7 @@
 draft: false
 title: "GetPointer"
 toc: true
-description: "Returns the raw memory pointer to the pinned data buffer for zero-copy access"
+description: "Returns the pointer to the Cuda memory."
 katex: true
 icon: point_scan
 ---
@@ -12,17 +12,17 @@ icon: point_scan
 <META NAME="GENERATOR" CONTENT="G Development Environment">
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
-<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem GetPointer.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem GetPointer.vi</H2>
-<P>Returns the raw memory pointer to the pinned data buffer for zero-copy access.</P>
+<A NAME="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:GpuMat.lvclass:GpuMat GetPointer.vi"></A><H2>OpenLvVision_OpenCv.lvlib:Cuda.lvlib:GpuMat.lvclass:GpuMat GetPointer.vi</H2>
+<P>Returns the pointer to the Cuda memory.</P>
 <P></P>
-<P>This increments the OpenCV reference count. To prevent memory leaks, the generated handlePtr must be freed after use, either by the external library via the releaseCallback, or explicitly in LabVIEW using the &quot;HostMem ReleasePointer&quot; VI.</P>
+<P>This increments the OpenCV reference count. To prevent memory leaks, the generated handlePtr must be freed after use, either by the external library via the releaseCallback, or explicitly in LabVIEW using the &quot;GpuMat ReleasePointer&quot; VI.</P>
 
 {{< prism lang="cpp" >}}
 
 
-struct HostMem_PointerData
+struct GpuMat_PointerData
 {
-    uintptr_t dataPtr;
+    uintptr_t cudaPtr;
     int64_t   step;
     uint64_t  totalBytes;
     int32_t   cols;
@@ -30,36 +30,72 @@ struct HostMem_PointerData
     int32_t   elemSize;
     int32_t   cvType;
     int32_t   channels;
-    uintptr_t handlePtr; 
+    uintptr_t handlePtr;
     uintptr_t releaseCallbackPtr;
 };
 
- // LabVIEW registers this function so the external DLL can signal exactly when
- // it has finished accessing the pinned buffer. Invoking this safely decrements the 
- // underlying OpenCV reference count, preventing memory leaks and access violations.
+typedef void (*ReleasePointerCallback)(void* handle);
 
-typedef void (*ReleaseCallback)(void* handle);
 
-extern "C" __declspec(dllexport) void Camera_Snap(const HostMem_PointerData* info)
+//  CUDA Kernel
+__global__ void IncrementByOneKernel(uint8_t* data, int step, int cols, int rows)
 {
-    // Validate the descriptor and buffer address before dereferencing.
-    if (info == nullptr || info->dataPtr == 0)
+    // Derive the 2-D pixel coordinate from the launch grid.
+    const int x = blockIdx.x * blockDim.x + threadIdx.x;
+    const int y = blockIdx.y * blockDim.y + threadIdx.y;
+
+    // Discard threads that map outside the image boundaries.
+    if (x >= cols || y >= rows)
     {
         return;
     }
 
-    unsigned char* pixels     	= reinterpret_cast<unsigned char*>(info->dataPtr);
-    void* handle     		= reinterpret_cast<void*>(info->handlePtr);
-    ReleaseCallback releaseMem 	= reinterpret_cast<ReleaseCallback>(info->releaseCallbackPtr);
+    // Compute the linear byte offset using the row stride to account for
+    // any alignment padding introduced by the CUDA memory allocator.
+    const int index = (y * step) + x;
 
-    // Forward the pixel buffer to the camera acquisition.
-    // The subsystem writes the captured frame directly into the LabVIEW-owned
-    // memory buffer. This achieves a zero-copy data transfer.
-    Camera::Snap(pixels, info->cols, info->rows);
+    // Increment the pixel value
+    data[index] += 1;
+}
 
-    // Invoke the LabVIEW release callback to transfer buffer ownership back.
-    // Both the handle and the callback must be valid. If either is absent, the 
-    // buffer relies on LabVIEW's manual lifecycle management to be freed.
+extern "C" __declspec(dllexport) void ProcessGpuDataWithKernel(GpuMat_PointerData* data)
+{
+    // Validate the descriptor and device address before dereferencing either.
+    if (data == nullptr || data->cudaPtr == 0)
+    {
+        return;
+    }
+
+    uint8_t*               deviceBuffer = reinterpret_cast<uint8_t*>(data->cudaPtr);
+    void*                  handle       = reinterpret_cast<void*>(data->handlePtr);
+    ReleasePointerCallback releaseMem   = reinterpret_cast<ReleasePointerCallback>(data->releaseCallbackPtr);
+
+    // Process only single-channel 8-bit images (CV_8UC1, OpenCV type value 0).
+    if (data->cvType == 0)
+    {
+        // Partition the image into 16×16 thread blocks and compute the minimum
+        // number of blocks required to cover every pixel in the image.
+        const dim3 threadsPerBlock(16, 16);
+        const dim3 numBlocks(
+            (data->cols + threadsPerBlock.x - 1) / threadsPerBlock.x,
+            (data->rows + threadsPerBlock.y - 1) / threadsPerBlock.y
+        );
+
+        // Dispatch the kernel asynchronously on the default CUDA stream.
+        IncrementByOneKernel<<<numBlocks, threadsPerBlock>>>(
+            deviceBuffer,
+            static_cast<int>(data->step),
+            data->cols,
+            data->rows
+        );
+
+        // Synchronise the host thread with the device to ensure the kernel has
+        // completed before control returns to LabVIEW or cleanup proceeds.
+        cudaDeviceSynchronize();
+    }
+
+    // Invoke the OpenCV DLL release callback to transfer buffer ownership back
+    // to the runtime, allowing it to decrement the reference count and free the handle.
     if (handle != nullptr && releaseMem != nullptr)
     {
         releaseMem(handle);
@@ -68,7 +104,8 @@ extern "C" __declspec(dllexport) void Camera_Snap(const HostMem_PointerData* inf
 {{< /prism >}}
 
 <P></P>
-<P><IMG SRC="/HostMemGetPointerc.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:HostMem.lvclass:HostMem GetPointer.vi"></P>
+
+<P><IMG SRC="/GpuMatGetPointerc.png" ALT="OpenLvVision_OpenCv.lvlib:Cuda.lvlib:GpuMat.lvclass:GpuMat GetPointer.vi"></P>
 <Table>
 <TR valign=TOP>
 <TD>
@@ -122,10 +159,10 @@ extern "C" __declspec(dllexport) void Camera_Snap(const HostMem_PointerData* inf
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+<P><IMG SRC="/cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_GpuMatlvclass.png" ALT="cOpenLvVision__OpenCv_lvlib_Cuda_lvlib_GpuMatlvclass"></P>
 </TD>
 <TD>
-<B>HostMem in</B> </TD>
+<B>GpuMat in</B> </TD>
 </TR>
 </Table>
 <Table>
@@ -181,10 +218,10 @@ extern "C" __declspec(dllexport) void Camera_Snap(const HostMem_PointerData* inf
 <Table>
 <TR valign=TOP>
 <TD>
-<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_HostMemlvclass"></P>
+<P><IMG SRC="/iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_GpuMatlvclass.png" ALT="iOpenLvVision__OpenCv_lvlib_Cuda_lvlib_GpuMatlvclass"></P>
 </TD>
 <TD>
-<B>HostMem out</B> </TD>
+<B>GpuMat out</B> </TD>
 </TR>
 </Table>
 <Table>
@@ -193,7 +230,7 @@ extern "C" __declspec(dllexport) void Camera_Snap(const HostMem_PointerData* inf
 <P><IMG SRC="/inclst.png" ALT="inclst"></P>
 </TD>
 <TD>
-<B>PointerData</B> <P>Memory description of a CUDA-pinned host memory for zero-copy interop.</P>
+<B>GpuMat Pointer</B> <P>Memory description of a CUDA memory for zero-copy interop.</P>
 </TD>
 </TR>
 </Table>
@@ -204,7 +241,7 @@ extern "C" __declspec(dllexport) void Camera_Snap(const HostMem_PointerData* inf
 <P><IMG SRC="/iu64.png" ALT="iu64"></P>
 </TD>
 <TD>
-<B>DataPtr</B> <P>The absolute memory address of the first pixel in the image (top-left, coordinate 0,0)</P>
+<B>CudaPtr</B> <P>The Gpu memory address of the first pixel in the image (top-left, coordinate 0,0)</P>
 </TD>
 </TR>
 </Table>
